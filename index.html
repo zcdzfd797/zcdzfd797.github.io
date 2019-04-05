@@ -289,6 +289,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/React简书项目01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/05/React简书项目01/" itemprop="url">简书项目概述</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T21:48:24+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/05/React简书项目01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/05/React简书项目01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="简书项目"><a href="#简书项目" class="headerlink" title="简书项目"></a>简书项目</h3><h4 id="主要实现模块"><a href="#主要实现模块" class="headerlink" title="主要实现模块"></a>主要实现模块</h4><ul>
+<li>首页-详情页面</li>
+<li>登录校验</li>
+<li>header区域的动画效果</li>
+<li>复杂的切换效果<h4 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h4><ul>
+<li>create-react-app</li>
+<li>组件化思维</li>
+<li>jsx模版语法</li>
+<li>开发调试工具</li>
+<li>虚拟DOM</li>
+<li>生命周期</li>
+<li>React-transition-group 模块实现复杂的动画效果</li>
+<li>Redux</li>
+<li>Antd</li>
+<li>UI，容器组件</li>
+<li>无状态组件</li>
+<li>redux-thunk</li>
+<li>redux-sage</li>
+<li>Styled-components  布局 组件css编码</li>
+<li>Immutable.js   redux推出的数据框架–数据管理</li>
+<li>redux-immutable 中间件</li>
+<li>axios</li>
+</ul>
+</li>
+</ul>
+<h5 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h5><ul>
+<li>React Fiber 代表 React 16版本</li>
+<li>用create-react-app搭建的项目中 serviceWorker.js文件是用以在用户访问网页后断网再次访问还能显示网页的关键（pwa），</li>
+<li>PWA   Progressive Web App的英文缩写  渐进式增强WEB应用， 是Google 在2016年提出的概念，2017年落地的web技术。目的就是在移动端利用提供的标准化框架，在网页应用中实现和原生应用相近的用户体验的渐进式网页应用。</li>
+</ul>
+<h5 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* @es6结构赋值的应用 */</span></span><br><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">const</span> Component = React.Component</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>因为<code>render(){ /*jsx*/}</code> 所以需要 <code>import React from &#39;react&#39;</code></p>
+</li>
+<li><p>有时候在进行flex布局时，我们不希望顶层套一个div，此时我们可以引入 react 的 Fragment 占位符，可以做到jsx套用一个div但页面隐藏这个div  —顶部用<fragment></fragment>代替<div></div></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/Personality and its Transformations/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2430,7 +2618,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2452,7 +2640,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
