@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript框架--react,todolist,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="简单的todolist1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859import React, &amp;#123; Component,Fragment &amp;#125; from &apos;react&apos;/*Fragment 占位符，隐藏顶部标签">
+<meta name="keywords" content="JavaScript框架--react,todolist">
+<meta property="og:type" content="article">
+<meta property="og:title" content="todolist">
+<meta property="og:url" content="http://yoursite.com/2019/04/05/todolist/index.html">
+<meta property="og:site_name" content="午后の">
+<meta property="og:description" content="简单的todolist1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859import React, &amp;#123; Component,Fragment &amp;#125; from &apos;react&apos;/*Fragment 占位符，隐藏顶部标签">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-06T10:30:13.703Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="todolist">
+<meta name="twitter:description" content="简单的todolist1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859import React, &amp;#123; Component,Fragment &amp;#125; from &apos;react&apos;/*Fragment 占位符，隐藏顶部标签">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/05/todolist/">
+
+
+
+
+
+  <title>todolist | 午后の</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">午后の</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-档案">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            档案
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-计划">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            计划
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-地图">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/todolist/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">todolist</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T21:48:24+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/05/todolist/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/05/todolist/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="简单的todolist"><a href="#简单的todolist" class="headerlink" title="简单的todolist"></a>简单的todolist</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component,Fragment &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="comment">/*Fragment 占位符，隐藏顶部标签*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			inputValue: <span class="string">'请输入'</span>,</span><br><span class="line">			list: [<span class="string">'学习英文'</span>,<span class="string">'学习框架'</span>]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;Fragment&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;input</span><br><span class="line">					value = &#123;<span class="keyword">this</span>.state.inputValue&#125;</span><br><span class="line">					onChange = &#123;<span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">				/&gt;</span><br><span class="line">				&lt;button</span><br><span class="line">					onClick = &#123;<span class="keyword">this</span>.handleBtnClick.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">				&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>div&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">						<span class="keyword">return</span> &lt;li key=&#123;index&#125; onClick=&#123;this.handleItemDelete.bind(this,index)&#125; &gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line">						&#123;<span class="comment">/*用index做key值并不值得推荐*/</span>&#125;</span><br><span class="line">					&#125;)</span><br><span class="line">				&#125;</span><br><span class="line">			&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>Fragment&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleInputChange(e) &#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			inputValue: e.target.value</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleBtnClick() &#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			list: [...this.state.list, <span class="keyword">this</span>.state.inputValue],</span><br><span class="line">			inputValue: <span class="string">''</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleItemDelete(index) &#123;</span><br><span class="line">		<span class="comment">/*拷贝数组*/</span></span><br><span class="line">		<span class="keyword">const</span> list = [...this.state.list];</span><br><span class="line">		list.splice(index,<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			list</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+<h5 id="jsx模版语法"><a href="#jsx模版语法" class="headerlink" title="jsx模版语法"></a>jsx模版语法</h5><ul>
+<li>dangerouslySetInnerHTML </li>
+<li>for –&gt; htmlFor</li>
+<li>class –&gt; className</li>
+</ul>
+<h6 id="todolist拆分组件"><a href="#todolist拆分组件" class="headerlink" title="todolist拆分组件"></a>todolist拆分组件</h6><hr>
+<ul>
+<li>TodoItem.js</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span> &lt;div onClick = &#123;this.handleClick&#125; &gt;&#123;this.props.content&#125;&lt;/div&gt;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleClick() &#123;</span><br><span class="line">		<span class="keyword">this</span>.props.deleteItem(<span class="keyword">this</span>.props.index)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoItem;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>TodoList.js</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component,Fragment &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">'./TodoItem'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			inputValue: <span class="string">'请输入'</span>,</span><br><span class="line">			list: [ ]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;Fragment&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;input</span><br><span class="line">					value = &#123;<span class="keyword">this</span>.state.inputValue&#125;</span><br><span class="line">					onChange = &#123;<span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">				/&gt;</span><br><span class="line">				&lt;button</span><br><span class="line">					onClick = &#123;<span class="keyword">this</span>.handleBtnClick.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">				&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>div&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">						<span class="keyword">return</span> (</span><br><span class="line">						&lt;div&gt;</span><br><span class="line">						 	&lt;TodoItem</span><br><span class="line">						 		content = &#123;item&#125;</span><br><span class="line">						 		index=&#123;index&#125;</span><br><span class="line">						 		deleteItem=&#123;<span class="keyword">this</span>.handleItemDelete.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">						 		/&gt;</span><br><span class="line">						&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">						)</span></span><br><span class="line"><span class="regexp">					&#125;)</span></span><br><span class="line"><span class="regexp">				&#125;</span></span><br><span class="line"><span class="regexp">			&lt;/u</span>l&gt;</span><br><span class="line">			&lt;<span class="regexp">/Fragment&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	handleInputChange(e) &#123;</span></span><br><span class="line"><span class="regexp">		this.setState(&#123;</span></span><br><span class="line"><span class="regexp">			inputValue: e.target.value</span></span><br><span class="line"><span class="regexp">		&#125;)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	handleBtnClick() &#123;</span></span><br><span class="line"><span class="regexp">		this.setState(&#123;</span></span><br><span class="line"><span class="regexp">			list: [...this.state.list, this.state.inputValue],</span></span><br><span class="line"><span class="regexp">			inputValue: ''</span></span><br><span class="line"><span class="regexp">		&#125;)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	handleItemDelete(index) &#123;</span></span><br><span class="line"><span class="regexp">		/</span><span class="regexp">/ 拷贝数组</span></span><br><span class="line"><span class="regexp">		const list = [...this.state.list];</span></span><br><span class="line"><span class="regexp">		list.splice(index,1);</span></span><br><span class="line"><span class="regexp">		this.setState(&#123;</span></span><br><span class="line"><span class="regexp">			list</span></span><br><span class="line"><span class="regexp">		&#125;)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default TodoList;</span></span><br></pre></td></tr></table></figure>
+<h6 id="todolist优化"><a href="#todolist优化" class="headerlink" title="todolist优化"></a>todolist优化</h6><ul>
+<li>使用了解构赋值</li>
+<li>key值不建议使用index</li>
+</ul>
+<hr>
+<ul>
+<li>TodoItem.js</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">const</span> &#123;content &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;div onClick = &#123;<span class="keyword">this</span>.handleClick&#125; &gt;</span><br><span class="line">				&#123;content&#125;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	handleClick() &#123;</span></span><br><span class="line"><span class="regexp">		const &#123;deleteItem,index &#125; = this.props;</span></span><br><span class="line"><span class="regexp">		deleteItem(index)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default TodoItem;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>TodoList.js</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component,Fragment &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">'./TodoItem'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			inputValue: <span class="string">''</span>,</span><br><span class="line">			list: [ ]</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>)</span><br><span class="line">		<span class="keyword">this</span>.handleBtnClick = <span class="keyword">this</span>.handleBtnClick.bind(<span class="keyword">this</span>)</span><br><span class="line">		<span class="keyword">this</span>.handleItemDelete = <span class="keyword">this</span>.handleItemDelete.bind(<span class="keyword">this</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;Fragment&gt;</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">					&lt;input</span><br><span class="line">						placeholder=&#123;<span class="string">'不为无涯之事，何以遣有涯之生'</span>&#125;</span><br><span class="line">						value = &#123;<span class="keyword">this</span>.state.inputValue&#125;</span><br><span class="line">						onChange = &#123;<span class="keyword">this</span>.handleInputChange&#125;</span><br><span class="line">					/&gt;</span><br><span class="line">					&lt;button</span><br><span class="line">						onClick = &#123;<span class="keyword">this</span>.handleBtnClick&#125;</span><br><span class="line">					&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">				&lt;/</span>div&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&#123; <span class="keyword">this</span>.getTodoItem() &#125;</span><br><span class="line">				&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>Fragment&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getTodoItem() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> (</span><br><span class="line">				 	&lt;TodoItem</span><br><span class="line">				 		key=&#123;index&#125;</span><br><span class="line">				 		content = &#123;item&#125;</span><br><span class="line">				 		index=&#123;index&#125;</span><br><span class="line">				 		deleteItem=&#123;<span class="keyword">this</span>.handleItemDelete&#125;</span><br><span class="line">				 		/&gt;</span><br><span class="line">			)</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleInputChange(e) &#123;</span><br><span class="line">		<span class="keyword">const</span> value = e.target.value;</span><br><span class="line">		<span class="keyword">this</span>.setState( <span class="function"><span class="params">()</span>=&gt;</span>(&#123;</span><br><span class="line">			inputValue: value</span><br><span class="line">		&#125;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleBtnClick() &#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>)=&gt;</span>(&#123;</span><br><span class="line">			list: [...prevState.list, prevState.inputValue],</span><br><span class="line">			inputValue:	<span class="string">''</span></span><br><span class="line">		&#125;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleItemDelete(index) &#123;		</span><br><span class="line">		<span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> &#123;</span><br><span class="line">			<span class="keyword">const</span> list = [...prevState.list];</span><br><span class="line">			list.splice(index,<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">return</span> &#123;list&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript框架-react/" rel="tag"># JavaScript框架--react</a>
+          
+            <a href="/tags/todolist/" rel="tag"># todolist</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/05/React简书项目01/" rel="next" title="简书项目概述">
+                <i class="fa fa-chevron-left"></i> 简书项目概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/06/基于centos上线react项目/" rel="prev" title="腾讯云上线简单的react项目">
+                腾讯云上线简单的react项目 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cg</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#简单的todolist"><span class="nav-number">1.</span> <span class="nav-text">简单的todolist</span></a></li></ol><li class="nav-item nav-level-5"><a class="nav-link" href="#jsx模版语法"><span class="nav-number"></span> <span class="nav-text">jsx模版语法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#todolist拆分组件"><span class="nav-number">1.</span> <span class="nav-text">todolist拆分组件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#todolist优化"><span class="nav-number">2.</span> <span class="nav-text">todolist优化</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cg</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'YzvA2eWvWbzyxin2Gx5TsFha-gzGzoHsz',
+        appKey: 'o6tqeDfg9ukvRHO9ey1PGIJd',
+        placeholder: '不为无益之事,何以遣有涯之生',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
