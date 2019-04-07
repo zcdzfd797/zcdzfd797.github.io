@@ -289,6 +289,603 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/小程序文档复习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/17/小程序文档复习/" itemprop="url">小程序被坑指南</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-17T15:01:12+08:00">
+                2019-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/17/小程序文档复习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/17/小程序文档复习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="微信设计流程"><a href="#微信设计流程" class="headerlink" title="微信设计流程"></a>微信设计流程</h2><h4 id="注册小程序账号"><a href="#注册小程序账号" class="headerlink" title="注册小程序账号"></a>注册小程序账号</h4><h4 id="下载微信Web开发者工具"><a href="#下载微信Web开发者工具" class="headerlink" title="下载微信Web开发者工具"></a>下载微信Web开发者工具</h4><h4 id="配置小程序基本信息"><a href="#配置小程序基本信息" class="headerlink" title="配置小程序基本信息"></a>配置小程序基本信息</h4><h4 id="获取小程序-AppID"><a href="#获取小程序-AppID" class="headerlink" title="获取小程序 AppID"></a>获取小程序 AppID</h4><h4 id="配置小程序的合法域名"><a href="#配置小程序的合法域名" class="headerlink" title="配置小程序的合法域名"></a>配置小程序的合法域名</h4><ul>
+<li>request合法域名  填写 后端接口所在网址（必须是https协议）</li>
+</ul>
+<hr>
+<h4 id="打开微信web开发工具开发"><a href="#打开微信web开发工具开发" class="headerlink" title="打开微信web开发工具开发"></a>打开微信web开发工具开发</h4><ul>
+<li>填写AppID、项目名称、项目路径</li>
+<li>项目设置，勾选开启ES6转ES5，开启上传代码样式文件自动补全，代码压缩上传；若开启开发环境不校验请求域名、tls版本以及https证书，则能使用绑定合法域名外的接口。正式上线时取消勾选</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目上线流程</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">本地开发</td>
+<td style="text-align:left">在微信web开发者工具中可以编辑预览</td>
+</tr>
+<tr>
+<td style="text-align:left">开发版</td>
+<td style="text-align:left">开发者可以真机测试</td>
+</tr>
+<tr>
+<td style="text-align:left">体验版</td>
+<td style="text-align:left">供开发者和体验者做上线前测试</td>
+</tr>
+<tr>
+<td style="text-align:left">提交审核</td>
+<td style="text-align:left">提交给微信进行上线审核</td>
+</tr>
+<tr>
+<td style="text-align:left">线上版</td>
+<td style="text-align:left">审核通过后正式上线</td>
+</tr>
+</tbody>
+</table>
+<h5 id="团队开发小程序-权限配置"><a href="#团队开发小程序-权限配置" class="headerlink" title="团队开发小程序 权限配置"></a>团队开发小程序 权限配置</h5><ul>
+<li>开发者权限</li>
+<li>数据分析</li>
+<li>暂停服务</li>
+<li>解除关联公众号</li>
+<li>体验者权限</li>
+<li>开发管理</li>
+<li>开发设置</li>
+<li>登录</li>
+</ul>
+<h5 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h5><p>配置层，逻辑层，视图层</p>
+<ul>
+<li>配置文件.json</li>
+<li>逻辑文件.js</li>
+<li>样式文件.wxss</li>
+<li>布局文件.wxml</li>
+</ul>
+<h5 id="学习（框架-组件-api）"><a href="#学习（框架-组件-api）" class="headerlink" title="学习（框架 组件 api）"></a>学习（框架 组件 api）</h5><blockquote>
+<p>app.json 配置项 — 此文件用于对对微信小程序进行全局配置</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">必填</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pages</td>
+<td style="text-align:left">String Array</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">设置页面路径</td>
+</tr>
+<tr>
+<td style="text-align:left">window</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">o</td>
+<td style="text-align:left">设置默认页面的窗口表现</td>
+</tr>
+<tr>
+<td style="text-align:left">tabBar</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">o</td>
+<td style="text-align:left">设置底部tab的表现</td>
+</tr>
+<tr>
+<td style="text-align:left">networkTimeout</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">o</td>
+<td style="text-align:left">设置网络超时时间</td>
+</tr>
+<tr>
+<td style="text-align:left">debug</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">o</td>
+<td style="text-align:left">设置是否开启 debug 模式</td>
+</tr>
+</tbody>
+</table>
+<h6 id="window"><a href="#window" class="headerlink" title="window"></a>window</h6><ul>
+<li><code>navigationBarBackgroundColor</code>  导航栏背景颜色</li>
+<li><code>navigationBarTextStyle</code>  导航栏标题颜色</li>
+<li><code>navigationBarTitleText</code>  导航栏标题文字内容</li>
+<li><code>backgroundColor</code>  窗口的背景色</li>
+<li><code>backgroundTextStyle</code>  下拉背景字体、loading图的样式、仅支持 黑白</li>
+<li><code>enablePullDownRefresh</code>  是否开启下拉刷新</li>
+<li><code>onReachBottomDistance</code>  页面上拉触底事件触发时距离页面底部px距离</li>
+</ul>
+<h6 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"tabBar"</span>: &#123;</span><br><span class="line">  <span class="string">"list"</span>: &#123;</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"pagePath"</span>:<span class="string">"pages/index/index"</span>,</span><br><span class="line">      <span class="string">"text"</span>:<span class="string">"底部tab1 --- 首页"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"pagePath"</span>:<span class="string">"pages/logs/logs"</span>,</span><br><span class="line">      <span class="string">"text"</span>:<span class="string">"底部tab2 --- 日志"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>color</code> — tab上的文字默认颜色</li>
+<li><code>selectedColor</code> — tab上的文字选中时的颜色</li>
+<li><code>backgroundColor</code> — tab的背景色</li>
+<li><code>borderStyle</code> — tabbar 上边框的颜色，仅支持黑白</li>
+<li><code>list</code> — tab的列表 2~5个<ul>
+<li><code>pagePath</code> — 页面路径，<strong>必须现在pages中先定义</strong></li>
+<li><code>text</code></li>
+<li><code>iconPath</code></li>
+<li><code>selectedIconPath</code> — 当position为top时，此参数无效</li>
+</ul>
+</li>
+<li><code>position</code> — 可选 bottom、top</li>
+<li><code>custom</code> — 自定义tabBar</li>
+</ul>
+<h6 id="networkTimeout"><a href="#networkTimeout" class="headerlink" title="networkTimeout"></a>networkTimeout</h6><ul>
+<li>各类网络请求的超时时间，单位均为毫秒。<blockquote>
+<p>网络超时时间配置，当调用后端接口，上传内置接口等。若超过一定时间，进行修正操作</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><code>request</code> , <code>connectSocket</code> , <code>uploadFile</code> , <code>downloadFile</code> 规定<code>wx.~</code> 的超时时间</li>
+</ul>
+<h6 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h6><ul>
+<li>是否开启debug模式<blockquote>
+<p>帮助页面开发时 调试使用</p>
+</blockquote>
+</li>
+</ul>
+<h6 id="page-json-页面配置"><a href="#page-json-页面配置" class="headerlink" title="page.json 页面配置"></a>page.json 页面配置</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">navigationBarBackgroundColor</span><br><span class="line">navigationBarTextStyle</span><br><span class="line">navigationBarTitleText</span><br><span class="line">navigationStyle</span><br><span class="line">backgroundColor</span><br><span class="line">backgroundTextStyle</span><br><span class="line">backgroundColorTop</span><br><span class="line">backgroundColorBottom</span><br><span class="line">enablePullDownRefresh</span><br><span class="line">onReachBottomDistance</span><br><span class="line">pageOrientation --- 屏幕旋转设置</span><br></pre></td></tr></table></figure>
+<h4 id="逻辑层js学习"><a href="#逻辑层js学习" class="headerlink" title="逻辑层js学习"></a>逻辑层js学习</h4><p>App(Object)</p>
+<ul>
+<li><code>App()</code>函数用来注册一个小程序。接受一个<code>object</code>参数，其指定小程序的生命周期回调等<blockquote>
+<p>必须在 <strong>app.js</strong> 中调用，且只能调用一次。<br>+<br>、、<code>、</code>、、自定义函数</p>
+</blockquote>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Object参数</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>onLaunch</code></td>
+<td style="text-align:left"><strong>生命周期函数</strong> 初始化完成时(只触发一次)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>onShow</code></td>
+<td style="text-align:left"><strong>生命周期函数</strong> 启动或从后台进前台显示时</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>onHide</code></td>
+<td style="text-align:left"><strong>生命周期函数</strong> 进后台时</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>onError</code></td>
+<td style="text-align:left">小程序发生脚本错误或api调用失败时触发，附带错误信息</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>onPageNotFound</code></td>
+<td style="text-align:left">打开页面 404 时触发</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>自定义函数</strong></td>
+<td style="text-align:left">开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问;属于全局性质的</td>
+</tr>
+</tbody>
+</table>
+<h5 id="App-onLaunch-Object-wx-getLaunchOptionsSync-的参数"><a href="#App-onLaunch-Object-wx-getLaunchOptionsSync-的参数" class="headerlink" title="App.onLaunch  Object wx.getLaunchOptionsSync()的参数"></a><code>App.onLaunch</code>  <code>Object wx.getLaunchOptionsSync()</code>的参数</h5><table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">path</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">启动小程序的路径</td>
+</tr>
+<tr>
+<td style="text-align:left">scene</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">启动小程序的场景值 （详情见后台）</td>
+</tr>
+<tr>
+<td style="text-align:left">query</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">启动小程序进入小程序页面带来的参数（query）</td>
+</tr>
+<tr>
+<td style="text-align:left">shareTicket</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">shareTicket</td>
+</tr>
+<tr>
+<td style="text-align:left">referrerInfo</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {}。 <code>appId</code>   <code>extraData</code></td>
+</tr>
+<tr>
+<td style="text-align:left">referrerInfo.appId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">来源小程序的 appId</td>
+</tr>
+<tr>
+<td style="text-align:left">referrerInfo.extraData</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">来源小程序传过来的数据</td>
+</tr>
+</tbody>
+</table>
+<p><em>添加query值的步骤</em></p>
+<ul>
+<li>打开编译–添加编译模式（自定义编译）</li>
+<li><p>模式名称，启动页面地址 启动参数（query）</p>
+</li>
+<li><p>用处</p>
+</li>
+<li>通过 进入小程序链接 user=A user=B 参数值的不同 返利佣金</li>
+</ul>
+<h3 id="getApp"><a href="#getApp" class="headerlink" title="getApp()"></a><code>getApp()</code></h3><blockquote>
+<p>全局的 <code>getApp()</code> 函数，可以获取到小程序实例。</p>
+</blockquote>
+<h5 id="页面-Page"><a href="#页面-Page" class="headerlink" title="页面 Page"></a>页面 Page</h5><ul>
+<li><code>Page(Object)</code>函数用来注册一个页面。接受一个<code>Object</code> 类型参数，其指定页面的初始数据、生命周期回调、事件处理函数等。</li>
+</ul>
+<p><strong>Object 参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">页面的初始数据,定义数据，以便视图层显示，mvvm</td>
+</tr>
+<tr>
+<td style="text-align:left">onLoad</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left"><strong>生命周期回调</strong> —监听页面加载</td>
+</tr>
+<tr>
+<td style="text-align:left">onShow</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left"><strong>生命周期回调</strong> —监听页面显示</td>
+</tr>
+<tr>
+<td style="text-align:left">onReady</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left"><strong>生命周期回调</strong> —监听页面初次渲染完成</td>
+</tr>
+<tr>
+<td style="text-align:left">onHide</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left"><strong>生命周期回调</strong> —监听页面隐藏</td>
+</tr>
+<tr>
+<td style="text-align:left">onUnload</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left"><strong>生命周期回调</strong> —监听页面卸载</td>
+</tr>
+<tr>
+<td style="text-align:left">onPullDownRefresh</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">监听用户下拉动作（前提条件：配置选项app.json-window- <code>enablePullDownRefresh</code> 为true）</td>
+</tr>
+<tr>
+<td style="text-align:left">onReachBottom</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">页面上拉触底事件的处理函数（前提条件：配置选项app.json-window-<code>onReachBottomDistance</code>为true）</td>
+</tr>
+<tr>
+<td style="text-align:left">onShareAppMessage</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">用户点击右上角转发</td>
+</tr>
+<tr>
+<td style="text-align:left">onPageScroll</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">页面滚动触发事件的处理函数</td>
+</tr>
+<tr>
+<td style="text-align:left">onResize</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">页面尺寸改变时触发，详见 响应显示区域变化</td>
+</tr>
+<tr>
+<td style="text-align:left">onTabItemTap</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">当前是 tab 页时，点击 tab 时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">其他</td>
+<td style="text-align:left">Any</td>
+<td style="text-align:left">开发者可以添加任意的函数或数据到 Object 参数中，在页面的函数中用 this 可以访问</td>
+</tr>
+</tbody>
+</table>
+<h6 id="onShareAppMessage"><a href="#onShareAppMessage" class="headerlink" title="onShareAppMessage"></a><code>onShareAppMessage</code></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  onShareAppMessage(res) &#123;</span><br><span class="line">    if (res.from === &apos;button&apos;) &#123;</span><br><span class="line">      // 来自页面内转发按钮</span><br><span class="line">      console.log(res.target)</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &apos;自定义转发标题&apos;,</span><br><span class="line">      path: &apos;/page/user?id=123&apos;,</span><br><span class="line">      imageUrl:&apos;自定义图片路径，支持png jpg &apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Page.prototype.setData()</code>  改变页面数据<ul>
+<li>参数 <code>data</code> <code>callback</code><blockquote>
+<p>直接修改 this.data 而不调用 this.setData 是无法改变页面的状态的，还会造成数据不一致。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>Page 实例的生命周期<br><img src="https://developers.weixin.qq.com/miniprogram/dev/image/mina-lifecycle.png?t=19031520" alt="Page 实例的生命周期"></p>
+</blockquote>
+<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><ul>
+<li>在小程序中所有页面的路由全部由框架进行管理。框架以栈的形式维护了当前的所有页面。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">路由方式</th>
+<th style="text-align:left">页面栈表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">初始化</td>
+<td style="text-align:left">新页面入栈</td>
+</tr>
+<tr>
+<td style="text-align:left">打开新页面</td>
+<td style="text-align:left">新页面入栈</td>
+</tr>
+<tr>
+<td style="text-align:left">页面重定向</td>
+<td style="text-align:left">当前页面出栈，新页面入栈</td>
+</tr>
+<tr>
+<td style="text-align:left">页面返回</td>
+<td style="text-align:left">页面不断出栈，直到目标返回页</td>
+</tr>
+<tr>
+<td style="text-align:left">Tab切换</td>
+<td style="text-align:left">页面全部出栈，只留下新的Tab页面</td>
+</tr>
+<tr>
+<td style="text-align:left">重加载</td>
+<td style="text-align:left">页面全部出栈，只留下新的页面</td>
+</tr>
+</tbody>
+</table>
+<h4 id="路由触发方式以及页面生命周期函数"><a href="#路由触发方式以及页面生命周期函数" class="headerlink" title="路由触发方式以及页面生命周期函数"></a>路由触发方式以及页面生命周期函数</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">路由方式</th>
+<th style="text-align:left">触发时机</th>
+<th style="text-align:left">路由前页面</th>
+<th style="text-align:left">路由后页面</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">初始化</td>
+<td style="text-align:left">小程序打开的第一个页面</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">onLoad, onShow</td>
+</tr>
+<tr>
+<td style="text-align:left">打开新页面</td>
+<td style="text-align:left">调用 API wx.navigateTo 或使用组件 <navigator open-type="navigateTo"></navigator></td>
+<td style="text-align:left">onHide</td>
+<td style="text-align:left">onLoad, onShow</td>
+</tr>
+<tr>
+<td style="text-align:left">页面重定向</td>
+<td style="text-align:left">调用 API wx.redirectTo 或使用组件 <navigator open-type="redirectTo"></navigator></td>
+<td style="text-align:left">onUnload</td>
+<td style="text-align:left">onLoad, onShow</td>
+</tr>
+<tr>
+<td style="text-align:left">页面返回</td>
+<td style="text-align:left">调用 API wx.navigateBack 或使用组件<navigator open-type="navigateBack">或用户按左上角返回按钮</navigator></td>
+<td style="text-align:left">onUnload</td>
+<td style="text-align:left">onShow</td>
+</tr>
+<tr>
+<td style="text-align:left">Tab 切换</td>
+<td style="text-align:left">调用 API wx.switchTab 或使用组件 <navigator open-type="switchTab"> 或用户切换 Tab</navigator></td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">各种情况请参考下表</td>
+</tr>
+<tr>
+<td style="text-align:left">重启动</td>
+<td style="text-align:left">调用 API wx.reLaunch 或使用组件 <navigator open-type="reLaunch"></navigator></td>
+<td style="text-align:left">onUnload</td>
+<td style="text-align:left">onLoad, onShow</td>
+</tr>
+</tbody>
+</table>
+<h4 id="API-学习如何查阅使用"><a href="#API-学习如何查阅使用" class="headerlink" title="API  学习如何查阅使用"></a>API  学习如何查阅使用</h4><h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><ul>
+<li><code>&lt;icon type=&quot;success&quot; size=&quot;&quot;/&gt;</code></li>
+<li><img src="https://developers.weixin.qq.com/miniprogram/dev/image/pic/icon.png?t=19031520" alt></li>
+</ul>
+<p>写一个picker 的demo<br><img src="https://developers.weixin.qq.com/miniprogram/dev/image/pic/picker.png?t=19031520" alt></p>
+<h4 id="wxs"><a href="#wxs" class="headerlink" title="wxs"></a>wxs</h4><ul>
+<li>rpx (responsive pixel): 可以根据屏幕宽度进行自适应。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">设备</th>
+<th style="text-align:left">rpx换算px</th>
+<th style="text-align:left">px换算rpx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">iPhone6</td>
+<td style="text-align:left">1rpx = 0.5px</td>
+<td style="text-align:left">1px = 2rpx</td>
+</tr>
+</tbody>
+</table>
+<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><ul>
+<li>颜色 使用HexColor 类型  #ffffff</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/使用cordova制作app/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -580,7 +1177,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -602,7 +1199,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
