@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="react,经验总结,">
+  <meta name="keywords" content="react-Router,">
 
 
 
@@ -79,18 +79,25 @@
 
 
 
-<meta name="description" content="括号代表了什么？12345678910//es6const mapStateToProps = ()=&amp;gt;(&amp;#123;  //code descript  &amp;#125;)//es5&quot;use strict&quot;;var mapStateToProps = function mapStateToProps() &amp;#123;    return &amp;#123;//code descript&amp;#125;;">
-<meta name="keywords" content="react,经验总结">
+<meta name="description" content="核心 react-router react-router-dom   √ react-router-dom核心用法 react-router是一个基础包，react-router-dom中包含了react-router      安装1yarn add react-router-dom react-router-dom核心用法 HashRouter、BrowserRouter Route：path">
+<meta name="keywords" content="react-Router">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react写法归纳">
-<meta property="og:url" content="http://yoursite.com/2019/04/14/react写法归纳/index.html">
+<meta property="og:title" content="React_Router4.0 基础">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/React-Router4-0/index.html">
 <meta property="og:site_name" content="午后の">
-<meta property="og:description" content="括号代表了什么？12345678910//es6const mapStateToProps = ()=&amp;gt;(&amp;#123;  //code descript  &amp;#125;)//es5&quot;use strict&quot;;var mapStateToProps = function mapStateToProps() &amp;#123;    return &amp;#123;//code descript&amp;#125;;">
+<meta property="og:description" content="核心 react-router react-router-dom   √ react-router-dom核心用法 react-router是一个基础包，react-router-dom中包含了react-router      安装1yarn add react-router-dom react-router-dom核心用法 HashRouter、BrowserRouter Route：path">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-14T16:50:57.240Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React-Router4-0/Route_useful.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React-Router4-0/Link.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React-Router4-0/Switch01.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React-Router4-0/exact01.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React-Router4-0/ParamsExample.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React-Router4-0/ShowParamsExample.png">
+<meta property="og:updated_time" content="2019-04-21T12:03:10.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react写法归纳">
-<meta name="twitter:description" content="括号代表了什么？12345678910//es6const mapStateToProps = ()=&amp;gt;(&amp;#123;  //code descript  &amp;#125;)//es5&quot;use strict&quot;;var mapStateToProps = function mapStateToProps() &amp;#123;    return &amp;#123;//code descript&amp;#125;;">
+<meta name="twitter:title" content="React_Router4.0 基础">
+<meta name="twitter:description" content="核心 react-router react-router-dom   √ react-router-dom核心用法 react-router是一个基础包，react-router-dom中包含了react-router      安装1yarn add react-router-dom react-router-dom核心用法 HashRouter、BrowserRouter Route：path">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/21/React-Router4-0/Route_useful.png">
 
 
 
@@ -120,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/14/react写法归纳/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/21/React-Router4-0/">
 
 
 
 
 
-  <title>react写法归纳 | 午后の</title>
+  <title>React_Router4.0 基础 | 午后の</title>
   
 
 
@@ -293,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/14/react写法归纳/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/React-Router4-0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cg">
@@ -310,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">react写法归纳</h1>
+          <h1 class="post-title" itemprop="name headline">React_Router4.0 基础</h1>
         
 
         <div class="post-meta">
@@ -322,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-14T23:54:15+08:00">
-                2019-04-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T18:41:23+08:00">
+                2019-04-21
               </time>
             
 
@@ -352,6 +359,17 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -363,8 +381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/14/react写法归纳/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/14/react写法归纳/" itemprop="commentCount"></span>
+                <a href="/2019/04/21/React-Router4-0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/React-Router4-0/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,11 +415,46 @@
       
 
       
-        <h3 id="括号代表了什么？"><a href="#括号代表了什么？" class="headerlink" title="括号代表了什么？"></a>括号代表了什么？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function"><span class="params">()</span>=&gt;</span>(&#123;</span><br><span class="line">  <span class="comment">//code descript  </span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> mapStateToProps = <span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="comment">//code descript&#125;;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>去掉（）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function"><span class="params">()</span>=&gt;</span>&#123; <span class="comment">//code descript  &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> mapStateToProps = <span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params"></span>) </span>&#123;<span class="comment">//code descript&#125;;</span></span><br></pre></td></tr></table></figure>
+        <h3 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h3><ul>
+<li>react-router</li>
+<li>react-router-dom   √<ul>
+<li>react-router-dom核心用法<blockquote>
+<p>react-router是一个基础包，react-router-dom中包含了react-router</p>
+</blockquote>
 </li>
 </ul>
+</li>
+</ul>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add react-router-dom</span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="react-router-dom核心用法"><a href="#react-router-dom核心用法" class="headerlink" title="react-router-dom核心用法"></a>react-router-dom核心用法</h5><ul>
+<li>HashRouter、BrowserRouter</li>
+<li>Route：path、exact、component、render</li>
+<li>NavLink、Link</li>
+<li>Switch</li>
+<li>Redirect</li>
+</ul>
+<h6 id="HashRouter与BrowserRouter的区别"><a href="#HashRouter与BrowserRouter的区别" class="headerlink" title="HashRouter与BrowserRouter的区别"></a><code>HashRouter</code>与<code>BrowserRouter</code>的区别</h6><ul>
+<li>hash路由 url中带有 <strong>#</strong> .</li>
+</ul>
+<h6 id="Route的用法"><a href="#Route的用法" class="headerlink" title="Route的用法"></a><code>Route</code>的用法</h6><p><img src="/2019/04/21/React-Router4-0/Route_useful.png" alt="Route用法"></p>
+<h6 id="Link-导航功能"><a href="#Link-导航功能" class="headerlink" title="Link  导航功能"></a><code>Link</code>  导航功能</h6><p><img src="/2019/04/21/React-Router4-0/Link.png" alt="Link的用法"></p>
+<blockquote>
+<p><code>NavLink</code> 主要用于菜单导航</p>
+<ul>
+<li><strong>动态取值：</strong><ul>
+<li><strong>❤❤❤</strong> 定义<code>&lt;Route path=&quot;/chaos/:number&quot;/&gt;</code> 取值：<code>this.props.match.params.number</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h6 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a><code>Switch</code></h6><p><img src="/2019/04/21/React-Router4-0/Switch01.png" alt="Switch用法"></p>
+<blockquote>
+<p>因为4.0的路由允许我们匹配多个路由，例如当访问 /admin/ui时，会匹配如图符合条件的所有路由，实际上我们只需要匹配一个，此时在外嵌套Switch</p>
+</blockquote>
+<h6 id="Redirect-重定向-exact-严格匹配"><a href="#Redirect-重定向-exact-严格匹配" class="headerlink" title="Redirect  重定向   exact 严格匹配"></a><code>Redirect</code>  重定向   <code>exact</code> 严格匹配</h6><blockquote>
+<p>采用 <code>&lt;Switch&gt;</code>，只有一个路由会被渲染，并且总是渲染第一个匹配到的组件。因此，在第一个路由中，还是需要使用 <code>exact</code>，否则，当我们渲染 ‘/users’ 或 ‘/users/add’ 时，只会显示匹配 ‘/‘ 的组件<br><img src="/2019/04/21/React-Router4-0/exact01.png" alt="exact &amp; redirect"></p>
+</blockquote>
+<h6 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h6><p><img src="/2019/04/21/React-Router4-0/ParamsExample.png" alt="ParamsExample"><br><img src="/2019/04/21/React-Router4-0/ShowParamsExample.png" alt="ParamsExample"></p>
 
       
     </div>
@@ -419,9 +472,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/react/" rel="tag"># react</a>
-          
-            <a href="/tags/经验总结/" rel="tag"># 经验总结</a>
+            <a href="/tags/react-Router/" rel="tag"># react-Router</a>
           
         </div>
       
@@ -434,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/14/tree-animation/" rel="next" title="tree_animation">
-                <i class="fa fa-chevron-left"></i> tree_animation
+              <a href="/2019/04/14/react写法归纳/" rel="next" title="react写法归纳">
+                <i class="fa fa-chevron-left"></i> react写法归纳
               </a>
             
           </div>
@@ -443,10 +494,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/21/React-Router4-0/" rel="prev" title="React_Router4.0 基础">
-                React_Router4.0 基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -581,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#括号代表了什么？"><span class="nav-number">1.</span> <span class="nav-text">括号代表了什么？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#核心"><span class="nav-number">1.</span> <span class="nav-text">核心</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#react-router-dom核心用法"><span class="nav-number">1.0.2.</span> <span class="nav-text">react-router-dom核心用法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#HashRouter与BrowserRouter的区别"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">HashRouter与BrowserRouter的区别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Route的用法"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Route的用法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Link-导航功能"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">Link  导航功能</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Switch"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">Switch</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Redirect-重定向-exact-严格匹配"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">Redirect  重定向   exact 严格匹配</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例"><span class="nav-number">1.0.2.6.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
