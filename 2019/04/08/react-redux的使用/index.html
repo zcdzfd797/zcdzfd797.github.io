@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="安装1$ yarn add react-redux 示例 用react-redux写todolist    文件夹 文件     src index.js    TodoList.js    todolist初始状态  src/index.js 1234import React from &apos;react&apos;;import ReactDOM from &apos;react-dom&apos;;import TodoLis">
+<meta name="description" content="安装1$ yarn add react-redux Redux设计理念 Redux是将整个应用状态存储到一个地方上称为store,里面保存着一个状态树store tree,组件可以派发(dispatch)行为(action)给store,而不是直接通知其他组件，组件内部通过订阅store中的状态state来刷新自己的视图。    示例 用react-redux写todolist    文件夹 文件">
 <meta name="keywords" content="react相关,react-redux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-redux的使用">
 <meta property="og:url" content="http://yoursite.com/2019/04/08/react-redux的使用/index.html">
 <meta property="og:site_name" content="午后の">
-<meta property="og:description" content="安装1$ yarn add react-redux 示例 用react-redux写todolist    文件夹 文件     src index.js    TodoList.js    todolist初始状态  src/index.js 1234import React from &apos;react&apos;;import ReactDOM from &apos;react-dom&apos;;import TodoLis">
+<meta property="og:description" content="安装1$ yarn add react-redux Redux设计理念 Redux是将整个应用状态存储到一个地方上称为store,里面保存着一个状态树store tree,组件可以派发(dispatch)行为(action)给store,而不是直接通知其他组件，组件内部通过订阅store中的状态state来刷新自己的视图。    示例 用react-redux写todolist    文件夹 文件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T15:02:17.191Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/08/react-redux的使用/001.jpg">
+<meta property="og:updated_time" content="2019-04-27T12:56:14.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-redux的使用">
-<meta name="twitter:description" content="安装1$ yarn add react-redux 示例 用react-redux写todolist    文件夹 文件     src index.js    TodoList.js    todolist初始状态  src/index.js 1234import React from &apos;react&apos;;import ReactDOM from &apos;react-dom&apos;;import TodoLis">
+<meta name="twitter:description" content="安装1$ yarn add react-redux Redux设计理念 Redux是将整个应用状态存储到一个地方上称为store,里面保存着一个状态树store tree,组件可以派发(dispatch)行为(action)给store,而不是直接通知其他组件，组件内部通过订阅store中的状态state来刷新自己的视图。    示例 用react-redux写todolist    文件夹 文件">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/08/react-redux的使用/001.jpg">
 
 
 
@@ -368,6 +370,11 @@
 
       
         <p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add react-redux</span><br></pre></td></tr></table></figure></p>
+<h4 id="Redux设计理念"><a href="#Redux设计理念" class="headerlink" title="Redux设计理念"></a>Redux设计理念</h4><ul>
+<li><p>Redux是将整个应用状态存储到一个地方上称为store,里面保存着一个状态树store tree,组件可以派发(dispatch)行为(action)给store,而不是直接通知其他组件，组件内部通过订阅store中的状态state来刷新自己的视图。</p>
+<p><img src="/2019/04/08/react-redux的使用/001.jpg" alt="Redux工作流"></p>
+</li>
+</ul>
 <p>示例 用react-redux写todolist</p>
 <table>
 <thead>
@@ -701,7 +708,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -756,7 +763,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#todolist初始状态"><span class="nav-number">1.</span> <span class="nav-text">todolist初始状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题：如何想在-TodoList-js-中使用store中的数据（react-redux方法）"><span class="nav-number">2.</span> <span class="nav-text">问题：如何想在 TodoList.js 中使用store中的数据（react-redux方法）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#核心api-—-Provider"><span class="nav-number">2.0.1.</span> <span class="nav-text">核心api — Provider</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#核心api-—-connect"><span class="nav-number">2.0.2.</span> <span class="nav-text">核心api — connect</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整版"><span class="nav-number">2.1.</span> <span class="nav-text">完整版</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整版–-拆分-actionCreators-—-actionTypes"><span class="nav-number">2.2.</span> <span class="nav-text">完整版– 拆分   actionCreators  —    actionTypes</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Redux设计理念"><span class="nav-number">1.</span> <span class="nav-text">Redux设计理念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#todolist初始状态"><span class="nav-number">2.</span> <span class="nav-text">todolist初始状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题：如何想在-TodoList-js-中使用store中的数据（react-redux方法）"><span class="nav-number">3.</span> <span class="nav-text">问题：如何想在 TodoList.js 中使用store中的数据（react-redux方法）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#核心api-—-Provider"><span class="nav-number">3.0.1.</span> <span class="nav-text">核心api — Provider</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#核心api-—-connect"><span class="nav-number">3.0.2.</span> <span class="nav-text">核心api — connect</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整版"><span class="nav-number">3.1.</span> <span class="nav-text">完整版</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整版–-拆分-actionCreators-—-actionTypes"><span class="nav-number">3.2.</span> <span class="nav-text">完整版– 拆分   actionCreators  —    actionTypes</span></a></li></ol></div>
             
 
           </div>
