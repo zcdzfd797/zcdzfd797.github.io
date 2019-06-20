@@ -259,6 +259,450 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/todolist其二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/07/todolist其二/" itemprop="url">redux下的todolist</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-07T15:42:36+08:00">
+                2019-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/07/todolist其二/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/07/todolist其二/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="文件一览"><a href="#文件一览" class="headerlink" title="文件一览"></a>文件一览</h5><hr>
+<p>|- src<br>|- store<br>|- - index.js<br>|- - reducer.js<br>|- index.js<br>|- TodoList.js</p>
+<hr>
+<h5 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">  &quot;antd&quot;: &quot;^3.16.1&quot;,</span><br><span class="line">  &quot;react&quot;: &quot;^16.8.6&quot;,</span><br><span class="line">  &quot;react-dom&quot;: &quot;^16.8.6&quot;,</span><br><span class="line">  &quot;react-scripts&quot;: &quot;2.1.8&quot;,</span><br><span class="line">  &quot;redux&quot;: &quot;^4.0.1&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>google插件 –redux-devtools工具</li>
+</ul>
+<p>src-index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> TodoList <span class="keyword">from</span> <span class="string">'./TodoList'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;TodoList /&gt;, document.getElementById('root'));</span><br></pre></td></tr></table></figure>
+<hr>
+<p>src-TodoList.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'antd/dist/antd.css'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Input,Button,List &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state = store.getState();</span><br><span class="line">        <span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleStoreChange = <span class="keyword">this</span>.handleStoreChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        store.subscribe(<span class="keyword">this</span>.handleStoreChange);</span><br><span class="line">        <span class="keyword">this</span>.handleBtnClick=<span class="keyword">this</span>.handleBtnClick.bind(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div style=&#123;&#123;<span class="attr">marginTop</span>: <span class="string">'10px'</span>, <span class="attr">marginLeft</span>: <span class="string">'10px'</span>&#125;&#125;&gt;</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;Input </span><br><span class="line">                        value=&#123;<span class="keyword">this</span>.state.inputValue&#125; </span><br><span class="line">                        placeholder=<span class="string">"toto info"</span> </span><br><span class="line">                        style=&#123;&#123;<span class="attr">width</span>:<span class="string">'300px'</span>, <span class="attr">marginRight</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">                        onChange=&#123;<span class="keyword">this</span>.handleInputChange&#125;    </span><br><span class="line">                    /&gt;</span><br><span class="line">                    &lt;Button type=<span class="string">"primary"</span> onClick=&#123;<span class="keyword">this</span>.handleBtnClick&#125; &gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>div&gt;</span><br><span class="line">                &lt;List</span><br><span class="line">            style=&#123;&#123;<span class="attr">marginTop</span>:<span class="string">'10px'</span>,<span class="attr">width</span>:<span class="string">'300px'</span>&#125;&#125;</span><br><span class="line">            bordered</span><br><span class="line">            dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">            renderItem=&#123;(item,index) =&gt; (&lt;List.Item onClick=&#123;this.handleItemDelete.bind(this,index)&#125; &gt;&#123;item&#125;&lt;/List.Item&gt;)&#125;        </span><br><span class="line">                /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    handleInputChange(e)&#123;</span><br><span class="line">        <span class="keyword">const</span> action = &#123;</span><br><span class="line">            type: <span class="string">'change_input_value'</span>,</span><br><span class="line">            value: e.target.value</span><br><span class="line">        &#125;</span><br><span class="line">        store.dispatch(action);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    handleStoreChange() &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(store.getState());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    handleBtnClick()&#123;</span><br><span class="line">        <span class="keyword">const</span> action = &#123;</span><br><span class="line">            type: <span class="string">'add_todo_item'</span></span><br><span class="line">        &#125;;</span><br><span class="line">        store.dispatch(action);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    handleItemDelete(index) &#123;</span><br><span class="line">        <span class="keyword">const</span> action = &#123;</span><br><span class="line">            type: <span class="string">'delete_todo_item'</span>,</span><br><span class="line">            index</span><br><span class="line">        &#125;</span><br><span class="line">        store.dispatch(action);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>src - store – index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducer'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(</span><br><span class="line">    reducer,</span><br><span class="line">    <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>src - store – reducer.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> defaultState = &#123;</span><br><span class="line">    inputValue: <span class="string">''</span>,</span><br><span class="line">    list: []</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (state = defaultState,action) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(action.type === <span class="string">'change_input_value'</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.inputValue = action.value;</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(action.type === <span class="string">'add_todo_item'</span>) &#123;</span><br><span class="line">        <span class="comment">// 添加：深拷贝复制→list数组尾部添加输入框数据→情况输入框数据→返回新state</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.list.push(newState.inputValue);</span><br><span class="line">        newState.inputValue =<span class="string">''</span>;</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(action.type ===<span class="string">'delete_todo_item'</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.list.splice(action.index,<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(state,action);</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/基于centos上线react项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/06/基于centos上线react项目/" itemprop="url">腾讯云上线简单的react项目</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-06T12:46:53+08:00">
+                2019-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/06/基于centos上线react项目/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/06/基于centos上线react项目/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="腾讯云上线react版todolist"><a href="#腾讯云上线react版todolist" class="headerlink" title="腾讯云上线react版todolist"></a>腾讯云上线react版todolist</h1><ul>
+<li>用到的软件<ol>
+<li>WinSCP</li>
+<li>Xshell 6<ul>
+<li><a href="https://xshell.woytu.com/" target="_blank" rel="noopener">破解版</a></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="打包项目"><a href="#打包项目" class="headerlink" title="打包项目"></a>打包项目</h2><ul>
+<li>在项目的package.json 中添加一 “homepage”:”./“,这是为了打包成一般的静态资源以便在服务端显示</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//主要体现此条目放置位置</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;todolist&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.1.0&quot;,</span><br><span class="line">  &quot;homepage&quot;:&quot;./&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;global&quot;: &quot;^4.3.2&quot;,</span><br><span class="line">    &quot;react&quot;: &quot;^16.8.6&quot;,</span><br><span class="line">    &quot;react-dom&quot;: &quot;^16.8.6&quot;,</span><br><span class="line">    &quot;react-scripts&quot;: &quot;2.1.8&quot;,</span><br><span class="line">    &quot;serve&quot;: &quot;^11.0.0&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装serve</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g serve</span><br><span class="line"></span><br><span class="line">yarn global add serve</span><br></pre></td></tr></table></figure>
+<ul>
+<li>打包</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br><span class="line"></span><br><span class="line">yarn build</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>打包完成，生成的为静态html</p>
+</blockquote>
+<ul>
+<li>(可选)使用命令<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">serve-s build</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>INFO: Accepting connections at <a href="http://localhost:5000" target="_blank" rel="noopener">http://localhost:5000</a></p>
+</blockquote>
+<hr>
+<h2 id="服务器设置"><a href="#服务器设置" class="headerlink" title="服务器设置"></a>服务器设置</h2><ul>
+<li>腾讯云服务器</li>
+<li>centos7.x</li>
+<li>Nginx</li>
+</ul>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><p>1、gcc安装</p>
+<ul>
+<li>安装 nginx 需要先将官网下载的源码进行编译，编译依赖 gcc 环境，如果没有 gcc 环境，则需要安装：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc-c++</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2、PCRE pcre-devel 安装</p>
+<ul>
+<li>PCRE(Perl Compatible Regular Expressions) 是一个Perl库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库，pcre-devel 是使用 pcre 开发的一个二次开发库。nginx也需要此库。命令：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y pcre pcre-devel</span><br></pre></td></tr></table></figure>
+<p>3、zlib 安装</p>
+<ul>
+<li>zlib 库提供了很多种压缩和解压缩的方式， nginx 使用 zlib 对 http 包的内容进行 gzip ，所以需要在 Centos 上安装 zlib 库。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y zlib zlib-devel</span><br></pre></td></tr></table></figure>
+<p>4、OpenSSL 安装</p>
+<ul>
+<li>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。<br>nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure>
+<p>5、Nginx安装</p>
+<ul>
+<li><p>使用了wget命令下载</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget -c https:<span class="comment">//nginx.org/download/nginx-1.14.2.tar.gz</span></span><br><span class="line"></span><br><span class="line">* 解压</span><br><span class="line">```c</span><br><span class="line">tar -zxvf nginx<span class="number">-1.14</span><span class="number">.2</span>.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd nginx<span class="number">-1.14</span><span class="number">.2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译及安装</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找安装路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis nginx</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>显示路径为 /usr/local/nginx</p>
+</blockquote>
+<h6 id="nginx操作指令"><a href="#nginx操作指令" class="headerlink" title="nginx操作指令"></a>nginx操作指令</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/nginx/sbin/</span><br><span class="line">./nginx</span><br><span class="line">./nginx -s stop</span><br><span class="line">./nginx -s quit</span><br><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>要使指令生效 得先进入sbin目录</p>
+</blockquote>
+<h6 id="重启-nginx"><a href="#重启-nginx" class="headerlink" title="重启 nginx"></a>重启 nginx</h6><ol>
+<li><p>先停止再启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s quit</span><br><span class="line">./nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>❤ 重新加载配置文件：</p>
+<ul>
+<li>当 ngin x的配置文件 nginx.conf 修改后，要想让配置生效需要重启 nginx，使用-s reload不用先停止 ngin x再启动 nginx 即可将配置信息在 nginx 中生效，如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="开机自启动"><a href="#开机自启动" class="headerlink" title="开机自启动"></a>开机自启动</h5><ul>
+<li><p>即在rc.local增加启动代码就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.local</span><br></pre></td></tr></table></figure>
+<ul>
+<li>增加一行  /usr/local/nginx/sbin/nginx<blockquote>
+<p>也可进入相关目录直接修改文件</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>设置执行权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 rc.local</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>这个得进入etc目录执行  有效</p>
+</blockquote>
+<h2 id="上线"><a href="#上线" class="headerlink" title="上线"></a>上线</h2><ul>
+<li><p>将项目内文件上传至服务器某任意路径：如 “/opt/projects/todolist”</p>
+</li>
+<li><p>进入 /usr/local/nginx目录，找到conf目录下文件nginx.conf，打开修改 首个 server{}内的 location / {} 中的 root 对应的 代码改为 你项目的存放路径</p>
+<ul>
+<li>大约在第43代码行处<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    root   /opt/projects/todolist;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>重启nginx  <code>./nginx -s reload</code></p>
+</li>
+<li><p><a href="http://www.zcdzfd.cn/" target="_blank" rel="noopener">进入网站</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/todolist/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -390,6 +834,194 @@
 <li>TodoList.js</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component,Fragment &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">'./TodoItem'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			inputValue: <span class="string">''</span>,</span><br><span class="line">			list: [ ]</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>)</span><br><span class="line">		<span class="keyword">this</span>.handleBtnClick = <span class="keyword">this</span>.handleBtnClick.bind(<span class="keyword">this</span>)</span><br><span class="line">		<span class="keyword">this</span>.handleItemDelete = <span class="keyword">this</span>.handleItemDelete.bind(<span class="keyword">this</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;Fragment&gt;</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">					&lt;input</span><br><span class="line">						placeholder=&#123;<span class="string">'不为无涯之事，何以遣有涯之生'</span>&#125;</span><br><span class="line">						value = &#123;<span class="keyword">this</span>.state.inputValue&#125;</span><br><span class="line">						onChange = &#123;<span class="keyword">this</span>.handleInputChange&#125;</span><br><span class="line">					/&gt;</span><br><span class="line">					&lt;button</span><br><span class="line">						onClick = &#123;<span class="keyword">this</span>.handleBtnClick&#125;</span><br><span class="line">					&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">				&lt;/</span>div&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&#123; <span class="keyword">this</span>.getTodoItem() &#125;</span><br><span class="line">				&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>Fragment&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getTodoItem() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> (</span><br><span class="line">				 	&lt;TodoItem</span><br><span class="line">				 		key=&#123;index&#125;</span><br><span class="line">				 		content = &#123;item&#125;</span><br><span class="line">				 		index=&#123;index&#125;</span><br><span class="line">				 		deleteItem=&#123;<span class="keyword">this</span>.handleItemDelete&#125;</span><br><span class="line">				 		/&gt;</span><br><span class="line">			)</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleInputChange(e) &#123;</span><br><span class="line">		<span class="keyword">const</span> value = e.target.value;</span><br><span class="line">		<span class="keyword">this</span>.setState( <span class="function"><span class="params">()</span>=&gt;</span>(&#123;</span><br><span class="line">			inputValue: value</span><br><span class="line">		&#125;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleBtnClick() &#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>)=&gt;</span>(&#123;</span><br><span class="line">			list: [...prevState.list, prevState.inputValue],</span><br><span class="line">			inputValue:	<span class="string">''</span></span><br><span class="line">		&#125;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleItemDelete(index) &#123;		</span><br><span class="line">		<span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> &#123;</span><br><span class="line">			<span class="keyword">const</span> list = [...prevState.list];</span><br><span class="line">			list.splice(index,<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">return</span> &#123;list&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/React简书项目01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/05/React简书项目01/" itemprop="url">简书项目概述</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T21:48:24+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/05/React简书项目01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/05/React简书项目01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="简书项目"><a href="#简书项目" class="headerlink" title="简书项目"></a>简书项目</h3><h4 id="主要实现模块"><a href="#主要实现模块" class="headerlink" title="主要实现模块"></a>主要实现模块</h4><ul>
+<li>首页-详情页面</li>
+<li>登录校验</li>
+<li>header区域的动画效果</li>
+<li>复杂的切换效果<h4 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h4><ul>
+<li>create-react-app</li>
+<li>组件化思维</li>
+<li>jsx模版语法</li>
+<li>开发调试工具</li>
+<li>虚拟DOM</li>
+<li>生命周期</li>
+<li>React-transition-group 模块实现复杂的动画效果</li>
+<li>Redux</li>
+<li>Antd</li>
+<li>UI，容器组件</li>
+<li>无状态组件</li>
+<li>redux-thunk</li>
+<li>redux-sage</li>
+<li>Styled-components  布局 组件css编码</li>
+<li>Immutable.js   redux推出的数据框架–数据管理</li>
+<li>redux-immutable 中间件</li>
+<li>axios</li>
+</ul>
+</li>
+</ul>
+<h5 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h5><ul>
+<li>React Fiber 代表 React 16版本</li>
+<li>用create-react-app搭建的项目中 serviceWorker.js文件是用以在用户访问网页后断网再次访问还能显示网页的关键（pwa），</li>
+<li>PWA   Progressive Web App的英文缩写  渐进式增强WEB应用， 是Google 在2016年提出的概念，2017年落地的web技术。目的就是在移动端利用提供的标准化框架，在网页应用中实现和原生应用相近的用户体验的渐进式网页应用。</li>
+</ul>
+<h5 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* @es6结构赋值的应用 */</span></span><br><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">const</span> Component = React.Component</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>因为<code>render(){ /*jsx*/}</code> 所以需要 <code>import React from &#39;react&#39;</code></p>
+</li>
+<li><p>有时候在进行flex布局时，我们不希望顶层套一个div，此时我们可以引入 react 的 Fragment 占位符，可以做到jsx套用一个div但页面隐藏这个div  —顶部用<fragment></fragment>代替<div></div></p>
+</li>
+</ul>
 
           
         
@@ -1859,862 +2491,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/小程序文档复习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="午后の">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/17/小程序文档复习/" itemprop="url">小程序被坑指南</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-17T15:01:12+08:00">
-                2019-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/17/小程序文档复习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/17/小程序文档复习/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="微信设计流程"><a href="#微信设计流程" class="headerlink" title="微信设计流程"></a>微信设计流程</h2><h4 id="注册小程序账号"><a href="#注册小程序账号" class="headerlink" title="注册小程序账号"></a>注册小程序账号</h4><h4 id="下载微信Web开发者工具"><a href="#下载微信Web开发者工具" class="headerlink" title="下载微信Web开发者工具"></a>下载微信Web开发者工具</h4><h4 id="配置小程序基本信息"><a href="#配置小程序基本信息" class="headerlink" title="配置小程序基本信息"></a>配置小程序基本信息</h4><h4 id="获取小程序-AppID"><a href="#获取小程序-AppID" class="headerlink" title="获取小程序 AppID"></a>获取小程序 AppID</h4><h4 id="配置小程序的合法域名"><a href="#配置小程序的合法域名" class="headerlink" title="配置小程序的合法域名"></a>配置小程序的合法域名</h4><ul>
-<li>request合法域名  填写 后端接口所在网址（必须是https协议）</li>
-</ul>
-<hr>
-<h4 id="打开微信web开发工具开发"><a href="#打开微信web开发工具开发" class="headerlink" title="打开微信web开发工具开发"></a>打开微信web开发工具开发</h4><ul>
-<li>填写AppID、项目名称、项目路径</li>
-<li>项目设置，勾选开启ES6转ES5，开启上传代码样式文件自动补全，代码压缩上传；若开启开发环境不校验请求域名、tls版本以及https证书，则能使用绑定合法域名外的接口。正式上线时取消勾选</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目上线流程</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">本地开发</td>
-<td style="text-align:left">在微信web开发者工具中可以编辑预览</td>
-</tr>
-<tr>
-<td style="text-align:left">开发版</td>
-<td style="text-align:left">开发者可以真机测试</td>
-</tr>
-<tr>
-<td style="text-align:left">体验版</td>
-<td style="text-align:left">供开发者和体验者做上线前测试</td>
-</tr>
-<tr>
-<td style="text-align:left">提交审核</td>
-<td style="text-align:left">提交给微信进行上线审核</td>
-</tr>
-<tr>
-<td style="text-align:left">线上版</td>
-<td style="text-align:left">审核通过后正式上线</td>
-</tr>
-</tbody>
-</table>
-<h5 id="团队开发小程序-权限配置"><a href="#团队开发小程序-权限配置" class="headerlink" title="团队开发小程序 权限配置"></a>团队开发小程序 权限配置</h5><ul>
-<li>开发者权限</li>
-<li>数据分析</li>
-<li>暂停服务</li>
-<li>解除关联公众号</li>
-<li>体验者权限</li>
-<li>开发管理</li>
-<li>开发设置</li>
-<li>登录</li>
-</ul>
-<h5 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h5><p>配置层，逻辑层，视图层</p>
-<ul>
-<li>配置文件.json</li>
-<li>逻辑文件.js</li>
-<li>样式文件.wxss</li>
-<li>布局文件.wxml</li>
-</ul>
-<h5 id="学习（框架-组件-api）"><a href="#学习（框架-组件-api）" class="headerlink" title="学习（框架 组件 api）"></a>学习（框架 组件 api）</h5><blockquote>
-<p>app.json 配置项 — 此文件用于对对微信小程序进行全局配置</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">属性</th>
-<th style="text-align:left">类型</th>
-<th style="text-align:left">必填</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">pages</td>
-<td style="text-align:left">String Array</td>
-<td style="text-align:left">√</td>
-<td style="text-align:left">设置页面路径</td>
-</tr>
-<tr>
-<td style="text-align:left">window</td>
-<td style="text-align:left">Object</td>
-<td style="text-align:left">o</td>
-<td style="text-align:left">设置默认页面的窗口表现</td>
-</tr>
-<tr>
-<td style="text-align:left">tabBar</td>
-<td style="text-align:left">Object</td>
-<td style="text-align:left">o</td>
-<td style="text-align:left">设置底部tab的表现</td>
-</tr>
-<tr>
-<td style="text-align:left">networkTimeout</td>
-<td style="text-align:left">Object</td>
-<td style="text-align:left">o</td>
-<td style="text-align:left">设置网络超时时间</td>
-</tr>
-<tr>
-<td style="text-align:left">debug</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">o</td>
-<td style="text-align:left">设置是否开启 debug 模式</td>
-</tr>
-</tbody>
-</table>
-<h6 id="window"><a href="#window" class="headerlink" title="window"></a>window</h6><ul>
-<li><code>navigationBarBackgroundColor</code>  导航栏背景颜色</li>
-<li><code>navigationBarTextStyle</code>  导航栏标题颜色</li>
-<li><code>navigationBarTitleText</code>  导航栏标题文字内容</li>
-<li><code>backgroundColor</code>  窗口的背景色</li>
-<li><code>backgroundTextStyle</code>  下拉背景字体、loading图的样式、仅支持 黑白</li>
-<li><code>enablePullDownRefresh</code>  是否开启下拉刷新</li>
-<li><code>onReachBottomDistance</code>  页面上拉触底事件触发时距离页面底部px距离</li>
-</ul>
-<h6 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"tabBar"</span>: &#123;</span><br><span class="line">  <span class="string">"list"</span>: &#123;</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"pagePath"</span>:<span class="string">"pages/index/index"</span>,</span><br><span class="line">      <span class="string">"text"</span>:<span class="string">"底部tab1 --- 首页"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"pagePath"</span>:<span class="string">"pages/logs/logs"</span>,</span><br><span class="line">      <span class="string">"text"</span>:<span class="string">"底部tab2 --- 日志"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>color</code> — tab上的文字默认颜色</li>
-<li><code>selectedColor</code> — tab上的文字选中时的颜色</li>
-<li><code>backgroundColor</code> — tab的背景色</li>
-<li><code>borderStyle</code> — tabbar 上边框的颜色，仅支持黑白</li>
-<li><code>list</code> — tab的列表 2~5个<ul>
-<li><code>pagePath</code> — 页面路径，<strong>必须现在pages中先定义</strong></li>
-<li><code>text</code></li>
-<li><code>iconPath</code></li>
-<li><code>selectedIconPath</code> — 当position为top时，此参数无效</li>
-</ul>
-</li>
-<li><code>position</code> — 可选 bottom、top</li>
-<li><code>custom</code> — 自定义tabBar</li>
-</ul>
-<h6 id="networkTimeout"><a href="#networkTimeout" class="headerlink" title="networkTimeout"></a>networkTimeout</h6><ul>
-<li>各类网络请求的超时时间，单位均为毫秒。<blockquote>
-<p>网络超时时间配置，当调用后端接口，上传内置接口等。若超过一定时间，进行修正操作</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><code>request</code> , <code>connectSocket</code> , <code>uploadFile</code> , <code>downloadFile</code> 规定<code>wx.~</code> 的超时时间</li>
-</ul>
-<h6 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h6><ul>
-<li>是否开启debug模式<blockquote>
-<p>帮助页面开发时 调试使用</p>
-</blockquote>
-</li>
-</ul>
-<h6 id="page-json-页面配置"><a href="#page-json-页面配置" class="headerlink" title="page.json 页面配置"></a>page.json 页面配置</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">navigationBarBackgroundColor</span><br><span class="line">navigationBarTextStyle</span><br><span class="line">navigationBarTitleText</span><br><span class="line">navigationStyle</span><br><span class="line">backgroundColor</span><br><span class="line">backgroundTextStyle</span><br><span class="line">backgroundColorTop</span><br><span class="line">backgroundColorBottom</span><br><span class="line">enablePullDownRefresh</span><br><span class="line">onReachBottomDistance</span><br><span class="line">pageOrientation --- 屏幕旋转设置</span><br></pre></td></tr></table></figure>
-<h4 id="逻辑层js学习"><a href="#逻辑层js学习" class="headerlink" title="逻辑层js学习"></a>逻辑层js学习</h4><p>App(Object)</p>
-<ul>
-<li><code>App()</code>函数用来注册一个小程序。接受一个<code>object</code>参数，其指定小程序的生命周期回调等<blockquote>
-<p>必须在 <strong>app.js</strong> 中调用，且只能调用一次。<br>+<br>、、<code>、</code>、、自定义函数</p>
-</blockquote>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Object参数</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>onLaunch</code></td>
-<td style="text-align:left"><strong>生命周期函数</strong> 初始化完成时(只触发一次)</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>onShow</code></td>
-<td style="text-align:left"><strong>生命周期函数</strong> 启动或从后台进前台显示时</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>onHide</code></td>
-<td style="text-align:left"><strong>生命周期函数</strong> 进后台时</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>onError</code></td>
-<td style="text-align:left">小程序发生脚本错误或api调用失败时触发，附带错误信息</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>onPageNotFound</code></td>
-<td style="text-align:left">打开页面 404 时触发</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>自定义函数</strong></td>
-<td style="text-align:left">开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问;属于全局性质的</td>
-</tr>
-</tbody>
-</table>
-<h5 id="App-onLaunch-Object-wx-getLaunchOptionsSync-的参数"><a href="#App-onLaunch-Object-wx-getLaunchOptionsSync-的参数" class="headerlink" title="App.onLaunch  Object wx.getLaunchOptionsSync()的参数"></a><code>App.onLaunch</code>  <code>Object wx.getLaunchOptionsSync()</code>的参数</h5><table>
-<thead>
-<tr>
-<th style="text-align:left">属性</th>
-<th style="text-align:left">类型</th>
-<th style="text-align:left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">path</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">启动小程序的路径</td>
-</tr>
-<tr>
-<td style="text-align:left">scene</td>
-<td style="text-align:left">number</td>
-<td style="text-align:left">启动小程序的场景值 （详情见后台）</td>
-</tr>
-<tr>
-<td style="text-align:left">query</td>
-<td style="text-align:left">Object</td>
-<td style="text-align:left">启动小程序进入小程序页面带来的参数（query）</td>
-</tr>
-<tr>
-<td style="text-align:left">shareTicket</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">shareTicket</td>
-</tr>
-<tr>
-<td style="text-align:left">referrerInfo</td>
-<td style="text-align:left">Object</td>
-<td style="text-align:left">来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {}。 <code>appId</code>   <code>extraData</code></td>
-</tr>
-<tr>
-<td style="text-align:left">referrerInfo.appId</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">来源小程序的 appId</td>
-</tr>
-<tr>
-<td style="text-align:left">referrerInfo.extraData</td>
-<td style="text-align:left">Object</td>
-<td style="text-align:left">来源小程序传过来的数据</td>
-</tr>
-</tbody>
-</table>
-<p><em>添加query值的步骤</em></p>
-<ul>
-<li>打开编译–添加编译模式（自定义编译）</li>
-<li><p>模式名称，启动页面地址 启动参数（query）</p>
-</li>
-<li><p>用处</p>
-</li>
-<li>通过 进入小程序链接 user=A user=B 参数值的不同 返利佣金</li>
-</ul>
-<h3 id="getApp"><a href="#getApp" class="headerlink" title="getApp()"></a><code>getApp()</code></h3><blockquote>
-<p>全局的 <code>getApp()</code> 函数，可以获取到小程序实例。</p>
-</blockquote>
-<h5 id="页面-Page"><a href="#页面-Page" class="headerlink" title="页面 Page"></a>页面 Page</h5><ul>
-<li><code>Page(Object)</code>函数用来注册一个页面。接受一个<code>Object</code> 类型参数，其指定页面的初始数据、生命周期回调、事件处理函数等。</li>
-</ul>
-<p><strong>Object 参数说明</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">属性</th>
-<th style="text-align:left">类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">data</td>
-<td style="text-align:left">Object</td>
-<td style="text-align:left">页面的初始数据,定义数据，以便视图层显示，mvvm</td>
-</tr>
-<tr>
-<td style="text-align:left">onLoad</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left"><strong>生命周期回调</strong> —监听页面加载</td>
-</tr>
-<tr>
-<td style="text-align:left">onShow</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left"><strong>生命周期回调</strong> —监听页面显示</td>
-</tr>
-<tr>
-<td style="text-align:left">onReady</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left"><strong>生命周期回调</strong> —监听页面初次渲染完成</td>
-</tr>
-<tr>
-<td style="text-align:left">onHide</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left"><strong>生命周期回调</strong> —监听页面隐藏</td>
-</tr>
-<tr>
-<td style="text-align:left">onUnload</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left"><strong>生命周期回调</strong> —监听页面卸载</td>
-</tr>
-<tr>
-<td style="text-align:left">onPullDownRefresh</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">监听用户下拉动作（前提条件：配置选项app.json-window- <code>enablePullDownRefresh</code> 为true）</td>
-</tr>
-<tr>
-<td style="text-align:left">onReachBottom</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">页面上拉触底事件的处理函数（前提条件：配置选项app.json-window-<code>onReachBottomDistance</code>为true）</td>
-</tr>
-<tr>
-<td style="text-align:left">onShareAppMessage</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">用户点击右上角转发</td>
-</tr>
-<tr>
-<td style="text-align:left">onPageScroll</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">页面滚动触发事件的处理函数</td>
-</tr>
-<tr>
-<td style="text-align:left">onResize</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">页面尺寸改变时触发，详见 响应显示区域变化</td>
-</tr>
-<tr>
-<td style="text-align:left">onTabItemTap</td>
-<td style="text-align:left">Function</td>
-<td style="text-align:left">当前是 tab 页时，点击 tab 时触发</td>
-</tr>
-<tr>
-<td style="text-align:left">其他</td>
-<td style="text-align:left">Any</td>
-<td style="text-align:left">开发者可以添加任意的函数或数据到 Object 参数中，在页面的函数中用 this 可以访问</td>
-</tr>
-</tbody>
-</table>
-<h6 id="onShareAppMessage"><a href="#onShareAppMessage" class="headerlink" title="onShareAppMessage"></a><code>onShareAppMessage</code></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  onShareAppMessage(res) &#123;</span><br><span class="line">    if (res.from === &apos;button&apos;) &#123;</span><br><span class="line">      // 来自页面内转发按钮</span><br><span class="line">      console.log(res.target)</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &apos;自定义转发标题&apos;,</span><br><span class="line">      path: &apos;/page/user?id=123&apos;,</span><br><span class="line">      imageUrl:&apos;自定义图片路径，支持png jpg &apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>Page.prototype.setData()</code>  改变页面数据<ul>
-<li>参数 <code>data</code> <code>callback</code><blockquote>
-<p>直接修改 this.data 而不调用 this.setData 是无法改变页面的状态的，还会造成数据不一致。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<blockquote>
-<p>Page 实例的生命周期<br><img src="https://developers.weixin.qq.com/miniprogram/dev/image/mina-lifecycle.png?t=19031520" alt="Page 实例的生命周期"></p>
-</blockquote>
-<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><ul>
-<li>在小程序中所有页面的路由全部由框架进行管理。框架以栈的形式维护了当前的所有页面。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">路由方式</th>
-<th style="text-align:left">页面栈表现</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">初始化</td>
-<td style="text-align:left">新页面入栈</td>
-</tr>
-<tr>
-<td style="text-align:left">打开新页面</td>
-<td style="text-align:left">新页面入栈</td>
-</tr>
-<tr>
-<td style="text-align:left">页面重定向</td>
-<td style="text-align:left">当前页面出栈，新页面入栈</td>
-</tr>
-<tr>
-<td style="text-align:left">页面返回</td>
-<td style="text-align:left">页面不断出栈，直到目标返回页</td>
-</tr>
-<tr>
-<td style="text-align:left">Tab切换</td>
-<td style="text-align:left">页面全部出栈，只留下新的Tab页面</td>
-</tr>
-<tr>
-<td style="text-align:left">重加载</td>
-<td style="text-align:left">页面全部出栈，只留下新的页面</td>
-</tr>
-</tbody>
-</table>
-<h4 id="路由触发方式以及页面生命周期函数"><a href="#路由触发方式以及页面生命周期函数" class="headerlink" title="路由触发方式以及页面生命周期函数"></a>路由触发方式以及页面生命周期函数</h4><table>
-<thead>
-<tr>
-<th style="text-align:left">路由方式</th>
-<th style="text-align:left">触发时机</th>
-<th style="text-align:left">路由前页面</th>
-<th style="text-align:left">路由后页面</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">初始化</td>
-<td style="text-align:left">小程序打开的第一个页面</td>
-<td style="text-align:left">null</td>
-<td style="text-align:left">onLoad, onShow</td>
-</tr>
-<tr>
-<td style="text-align:left">打开新页面</td>
-<td style="text-align:left">调用 API wx.navigateTo 或使用组件 <navigator open-type="navigateTo"></navigator></td>
-<td style="text-align:left">onHide</td>
-<td style="text-align:left">onLoad, onShow</td>
-</tr>
-<tr>
-<td style="text-align:left">页面重定向</td>
-<td style="text-align:left">调用 API wx.redirectTo 或使用组件 <navigator open-type="redirectTo"></navigator></td>
-<td style="text-align:left">onUnload</td>
-<td style="text-align:left">onLoad, onShow</td>
-</tr>
-<tr>
-<td style="text-align:left">页面返回</td>
-<td style="text-align:left">调用 API wx.navigateBack 或使用组件<navigator open-type="navigateBack">或用户按左上角返回按钮</navigator></td>
-<td style="text-align:left">onUnload</td>
-<td style="text-align:left">onShow</td>
-</tr>
-<tr>
-<td style="text-align:left">Tab 切换</td>
-<td style="text-align:left">调用 API wx.switchTab 或使用组件 <navigator open-type="switchTab"> 或用户切换 Tab</navigator></td>
-<td style="text-align:left">null</td>
-<td style="text-align:left">各种情况请参考下表</td>
-</tr>
-<tr>
-<td style="text-align:left">重启动</td>
-<td style="text-align:left">调用 API wx.reLaunch 或使用组件 <navigator open-type="reLaunch"></navigator></td>
-<td style="text-align:left">onUnload</td>
-<td style="text-align:left">onLoad, onShow</td>
-</tr>
-</tbody>
-</table>
-<h4 id="API-学习如何查阅使用"><a href="#API-学习如何查阅使用" class="headerlink" title="API  学习如何查阅使用"></a>API  学习如何查阅使用</h4><h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><ul>
-<li><code>&lt;icon type=&quot;success&quot; size=&quot;&quot;/&gt;</code></li>
-<li><img src="https://developers.weixin.qq.com/miniprogram/dev/image/pic/icon.png?t=19031520" alt></li>
-</ul>
-<p>写一个picker 的demo<br><img src="https://developers.weixin.qq.com/miniprogram/dev/image/pic/picker.png?t=19031520" alt></p>
-<h4 id="wxs"><a href="#wxs" class="headerlink" title="wxs"></a>wxs</h4><ul>
-<li>rpx (responsive pixel): 可以根据屏幕宽度进行自适应。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">设备</th>
-<th style="text-align:left">rpx换算px</th>
-<th style="text-align:left">px换算rpx</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">iPhone6</td>
-<td style="text-align:left">1rpx = 0.5px</td>
-<td style="text-align:left">1px = 2rpx</td>
-</tr>
-</tbody>
-</table>
-<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><ul>
-<li>颜色 使用HexColor 类型  #ffffff</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/使用cordova制作app/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="午后の">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/11/使用cordova制作app/" itemprop="url">cordova制作app</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T18:11:38+08:00">
-                2019-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/11/使用cordova制作app/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/11/使用cordova制作app/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="APP"><a href="#APP" class="headerlink" title="APP"></a>APP</h1><h2 id="app类别"><a href="#app类别" class="headerlink" title="app类别"></a>app类别</h2><ul>
-<li>webapp — 浏览器端</li>
-<li>hybird — 移动端app  将ios/android 变成浏览器（开发的语句还是原生+html+css）</li>
-<li>nativeApp — vue/react/angular –&gt; 原生的ios/android<h3 id="可以替你形成app的-古老稳定的-框架："><a href="#可以替你形成app的-古老稳定的-框架：" class="headerlink" title="可以替你形成app的(古老稳定的)框架："></a>可以替你形成app的(古老稳定的)框架：</h3></li>
-<li><strong>ionic</strong> — 最活跃,暂仅支持angular</li>
-<li>cordova</li>
-<li>phoneGap<blockquote>
-<p>vue 对应 WEEX<br>react 对应 REACT-NATIVE [2019年1月1日 风靡 ]<br>angular 对应 nativeSctipt</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="app功能列表示例"><a href="#app功能列表示例" class="headerlink" title="app功能列表示例"></a>app功能列表示例</h4><ul>
-<li>获取地理位置</li>
-<li>获取当前手机设备信息</li>
-<li>扫描</li>
-<li>上传头像、图片</li>
-<li>拍照</li>
-<li>支付 — 调用第三方接口</li>
-</ul>
-<h2 id="cordova-框架的学习"><a href="#cordova-框架的学习" class="headerlink" title="cordova 框架的学习"></a>cordova 框架的学习</h2><ul>
-<li>cordova的用处，生成能在手机app上运行的壳<h3 id="cordova-启动流程"><a href="#cordova-启动流程" class="headerlink" title="cordova 启动流程"></a>cordova 启动流程</h3></li>
-<li><a href="https://cordova.apache.org/" target="_blank" rel="noopener">官网链接</a></li>
-<li>全局安装 <code>npm i -g cordova</code></li>
-<li>查看是否安装成功 <code>cordova -v</code><blockquote>
-<p>出现bug提示 cordova不是内部或外部命令</p>
-<blockquote>
-<p>解决方案：重新配置环境变量<code>C:\Users\Administrator\AppData\Roaming\npm</code>填入[系统-高级系统设置–环境变量—填写]</p>
-</blockquote>
-</blockquote>
-</li>
-<li>创建项目<blockquote>
-<p><code>cordova create 项目名称</code><br><code>cordova create .com公司名称.项目名</code>   [不建议这么写，原因不明]</p>
-</blockquote>
-<h4 id="文件构成"><a href="#文件构成" class="headerlink" title="文件构成"></a>文件构成</h4><ul>
-<li>| hooks —&gt; 勿删</li>
-<li>| platforms —&gt; 要打包成什么平台 ios /android</li>
-<li>| plugins —&gt; 扩充功能 如 sanner  divices  bettersalary …</li>
-<li>| res —&gt; 当前应用的配置资源（eg:不同清晰度的图标）</li>
-<li>| www —&gt; 前端资源放置位置</li>
-<li>.npmignore — 忽略你在发布包时不想发布的文件</li>
-<li>config.xml — 配置项目名称等</li>
-</ul>
-</li>
-</ul>
-<h3 id="cordova-的使用"><a href="#cordova-的使用" class="headerlink" title="cordova 的使用"></a>cordova 的使用</h3><h4 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h4><ul>
-<li>ios  —-  xcode(从苹果的 app store  注:”超级超级慢” )</li>
-<li>android  —-  配置[java(安装jdk  Java SE Development Kit,<a href="https://www.cnblogs.com/smyhvae/p/3788534.html" target="_blank" rel="noopener">并添加Java环境变量配置</a>) + <a href="http://tools.android.com/download/" target="_blank" rel="noopener">安装 android.studio</a>]<blockquote>
-<p>提前层级不深的位置准备一个文件夹，如D盘 andriod文件夹 此时会有 <strong>sdk</strong> :安卓配置包  <strong>studio</strong>：android.studio工具。建议使用64位的包</p>
-</blockquote>
-</li>
-</ul>
-<h5 id="android-studio-环境搭建"><a href="#android-studio-环境搭建" class="headerlink" title="android studio 环境搭建"></a>android studio 环境搭建</h5><blockquote>
-<p>此部分需百度。……    以上大约耗时1上午</p>
-</blockquote>
-<h5 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h5><ul>
-<li>添加平台： <code>cordova platform add android/ios</code>  —约耗时20分钟+ （待考证）<blockquote>
-<p>新增内容： node_modules*** 内有插件、platforms - android</p>
-</blockquote>
-<h6 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h6><ul>
-<li>打开 <strong>android studio</strong> 应用</li>
-<li>从应用中打开创建的项目文件夹内平台下的 android /ios 文件夹</li>
-</ul>
-</li>
-<li>运行代码： <code>cordova run android</code><blockquote>
-<p> <strong>android studio</strong> 应用 点击左上角 的 小锤子（第七个图标）</p>
-</blockquote>
-</li>
-<li>安装app：需先连接设备（设备需要打开开发者模式–&gt;调试模式-这里自行百度-）.<blockquote>
-<p>若为提示连接成功 cmd <code>adb devices</code>  —显示设备唯一标识号<br>手机会多一个app，其内容就是www文件夹内容</p>
-</blockquote>
-</li>
-<li>更新app： <code>cordova prepare</code> +应用的绿色开始按钮▷</li>
-</ul>
-<h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><ul>
-<li>插件安装  <code>cordova plugin add 插件名</code> 上万种<a href="https://cordova.apache.org/docs/en/latest/" target="_blank" rel="noopener">插件plugin</a></li>
-<li>查看已安装插件 <code>cordova plugin list</code><h5 id="设备信息-cordova-plugin-device"><a href="#设备信息-cordova-plugin-device" class="headerlink" title="设备信息 cordova-plugin-device"></a>设备信息 cordova-plugin-device</h5></li>
-<li>安装 <code>cordova plugin add cordova-plugin-device</code><blockquote>
-<p>安装此device插件后 全局window上有一个对象：device。拥有很多属性</p>
-<ul>
-<li>device.cordova  —  <strong>cordova版本</strong></li>
-<li>device.model  —  <strong>底层模型</strong></li>
-<li>device.platform  —  <strong>平台</strong></li>
-<li>device.uuid  —  <strong>手机唯一标识</strong>  </li>
-<li>device.version  —  版本号</li>
-<li>device.manufacturer</li>
-<li>device.isVirtual  </li>
-<li>device.serial  —   <strong>系列</strong></li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>相关API使用复制粘贴官方文档</p>
-</blockquote>
-<h4 id="app打包-vue版"><a href="#app打包-vue版" class="headerlink" title="app打包 vue版"></a>app打包 vue版</h4><ul>
-<li>修改 config — index.js—<code>build: { index路径更改至www，assetsRout 路径更改至www  assetsPublicPath:&#39;./&#39;}</code></li>
-<li><p>在app的index 引入<code>&lt;script type=&quot;text/javascript&quot; src=&quot;cordova.js&quot;&gt;&lt;/script&gt;</code></p>
-</li>
-<li><p>可使用vue插件 vue-cordova</p>
-<h3 id="推荐学习"><a href="#推荐学习" class="headerlink" title="推荐学习"></a>推荐学习</h3></li>
-<li><strong>Weex</strong> 是一个使用Web开发体验来开发高性能原生应用的框架,建议学习精通</li>
-<li>weex-ui    |    natjs</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2760,7 +2541,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2771,7 +2552,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2782,7 +2563,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
