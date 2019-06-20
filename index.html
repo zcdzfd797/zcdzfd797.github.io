@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/Vstudy/vue_computed/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/Vue重头学/004 Vuex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cg">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/20/Vstudy/vue_computed/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2019/06/20/Vue重头学/004 Vuex/" itemprop="url">vue-Vuex</a></h1>
         
 
         <div class="post-meta">
@@ -290,7 +290,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T15:27:11+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T22:28:25+08:00">
                 2019-06-20
               </time>
             
@@ -301,6 +301,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue学习/" itemprop="url" rel="index">
+                    <span itemprop="name">vue学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -309,8 +331,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/20/Vstudy/vue_computed/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/20/Vstudy/vue_computed/" itemprop="commentCount"></span>
+                <a href="/2019/06/20/Vue重头学/004 Vuex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/20/Vue重头学/004 Vuex/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -340,9 +362,17 @@
       
         
           
-            <h2 id="vue-computed"><a href="#vue-computed" class="headerlink" title="vue_computed"></a>vue_computed</h2><h4 id="诞生原因"><a href="#诞生原因" class="headerlink" title="诞生原因"></a>诞生原因</h4><ul>
-<li>规避 模版上的显示复杂业务逻辑</li>
+            <h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><ul>
+<li>引入 vuex vue</li>
 </ul>
+<h5 id="修改vuex中state的数据"><a href="#修改vuex中state的数据" class="headerlink" title="修改vuex中state的数据"></a>修改vuex中state的数据</h5><p>我们要修改state中的数据时，必须得定义mutations，其为各种方法的集合，这方法会直接拿到state，这样就可以设置state新的值了</p>
+<blockquote>
+<p>为何非要用mutations做状态的修改？</p>
+<ul>
+<li>若用了mutations 则state的状态可以被跟踪，</li>
+</ul>
+</blockquote>
+<p>index.jx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    add(state) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -391,7 +421,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/Vstudy/vue重头学/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/Vue重头学/003 组件component/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cg">
@@ -410,7 +440,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/20/Vstudy/vue重头学/" itemprop="url">vue重新学</a></h1>
+                <a class="post-title-link" href="/2019/06/20/Vue重头学/003 组件component/" itemprop="url">vue-component</a></h1>
         
 
         <div class="post-meta">
@@ -422,7 +452,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T15:21:13+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T17:30:11+08:00">
                 2019-06-20
               </time>
             
@@ -445,8 +475,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
+                  <a href="/categories/vue学习/" itemprop="url" rel="index">
+                    <span itemprop="name">vue学习</span>
                   </a>
                 </span>
 
@@ -463,8 +493,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/20/Vstudy/vue重头学/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/20/Vstudy/vue重头学/" itemprop="commentCount"></span>
+                <a href="/2019/06/20/Vue重头学/003 组件component/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/20/Vue重头学/003 组件component/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -494,7 +524,388 @@
       
         
           
-            <h1 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h1><p><a href="Vstudy/vue_computed.md">计算属性computed</a></p>
+            <h1 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h1><ul>
+<li>全局组件</li>
+<li>局部组件</li>
+<li>props 传递数据</li>
+<li>Prop验证</li>
+<li>slot</li>
+</ul>
+<h3 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h3><h5 id="全局范围注册组件"><a href="#全局范围注册组件" class="headerlink" title="全局范围注册组件"></a>全局范围注册组件</h5><ul>
+<li>先全局定义组件</li>
+<li>后设置挂载点</li>
+<li>实例可以是多个 例如 id=’app’  id=’app2’,不过一般一个就够用了</li>
+</ul>
+<ul>
+<li>html<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;vue组件学习&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">        &lt;comment-component text=&quot;按钮一&quot; msg=&quot;aaa&quot;&gt;&lt;/comment-component&gt;</span><br><span class="line">        &lt;comment-component text=&quot;按钮二&quot; msg=&quot;bbb&quot;&gt;&lt;/comment-component&gt;</span><br><span class="line">        &lt;comment-component  text=&quot;按钮三&quot; msg=&quot;ccc&quot;&gt;&lt;/comment-component&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;app2&quot;&gt;</span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">        &lt;comment-component text=&quot;btn4&quot; msg=&quot;DDD&quot;&gt;&lt;/comment-component&gt;</span><br><span class="line">        &lt;comment-component text=&quot;btn5&quot; msg=&quot;EEE&quot;&gt;&lt;/comment-component&gt;</span><br><span class="line">        &lt;comment-component  text=&quot;btn6&quot; msg=&quot;FFF&quot;&gt;&lt;/comment-component&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**@全局组件 */</span></span><br><span class="line"><span class="comment">//需放在开头不然会导致未生成前挂载导致错误</span></span><br><span class="line">Vue.component(<span class="string">'comment-component'</span>,&#123;</span><br><span class="line">    props: [<span class="string">'text'</span>,<span class="string">'msg'</span>],</span><br><span class="line">    template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;</span></span><br><span class="line"><span class="string">        &lt;button @click="showMessage(msg)"&gt;&#123;&#123;text&#125;&#125;&lt;/button&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        showMessage(msg) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> dataSource = &#123;</span><br><span class="line">    message: <span class="string">'全局组件eg'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 设置挂载点</span></span><br><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: dataSource</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 设置挂载点2</span></span><br><span class="line"><span class="keyword">const</span> vm2 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app2'</span>,</span><br><span class="line">    data: dataSource</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h5 id="局部范围注册组件"><a href="#局部范围注册组件" class="headerlink" title="局部范围注册组件"></a>局部范围注册组件</h5><ul>
+<li>定义组件</li>
+<li>在挂载点 添加 <code>components</code>属性 其对象添加组件名</li>
+<li>在html中添加  组件名（使用 肉-串 写法）</li>
+<li>html 组件 属性传递父组件数据，用props接收,然后渲染，或者直接使用组件的数据data<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 局部使用局部数据 data要写成函数返回</span></span><br><span class="line">data:<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="keyword">return</span> dataSource&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Prop验证"><a href="#Prop验证" class="headerlink" title="Prop验证"></a>Prop验证</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  <span class="string">'lists'</span>: &#123;</span><br><span class="line">    type: <span class="built_in">Array</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="keyword">return</span> [<span class="string">'Cg'</span>]&#125;,</span><br><span class="line">    <span class="comment">//或强制</span></span><br><span class="line">    <span class="built_in">require</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>type 可以是下列原生构造函数中的一个：  [首字母大写]<br>String<br>Number<br>Boolean<br>Array<br>Object<br>Date<br>Function<br>Symbol</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//官方文档code</span></span><br><span class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    <span class="comment">// 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)</span></span><br><span class="line">    propA: <span class="built_in">Number</span>,</span><br><span class="line">    <span class="comment">// 多个可能的类型</span></span><br><span class="line">    propB: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</span><br><span class="line">    <span class="comment">// 必填的字符串</span></span><br><span class="line">    propC: &#123;</span><br><span class="line">      type: <span class="built_in">String</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 带有默认值的数字</span></span><br><span class="line">    propD: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">100</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 带有默认值的对象</span></span><br><span class="line">    propE: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      <span class="comment">// 对象或数组默认值必须从一个工厂函数获取</span></span><br><span class="line">      <span class="keyword">default</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">message</span>: <span class="string">'hello'</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 自定义验证函数</span></span><br><span class="line">    propF: &#123;</span><br><span class="line">      validator: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 这个值必须匹配下列字符串中的一个</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">'success'</span>, <span class="string">'warning'</span>, <span class="string">'danger'</span>].indexOf(value) !== <span class="number">-1</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="slot-插槽"><a href="#slot-插槽" class="headerlink" title="slot 插槽"></a>slot 插槽</h4><ul>
+<li>slot是Vue中内置组件— 凡是内置组件都不会被当做标签渲染到页面上</li>
+<li>优势： 当封装组件时，可以使组件更加灵活 ，复用性强</li>
+</ul>
+<h6 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h6><ul>
+<li>解决html页面文件 组件中写内容不显示问题<ul>
+<li>在相应组件内写入 <code>&lt;slot&gt;这里是默认显示值可以不写&lt;/slot&gt;</code>  </li>
+<li>这时候在html文件 组件标签下可以写死文本了，不写则显示 slot中的默认数据</li>
+</ul>
+</li>
+<li>有名字的 slot  <ul>
+<li>html页面组件 <code>&lt;组件 slot=&quot;slot插槽名&quot;&gt;  &lt;/组件&gt;</code></li>
+<li>js  template模版  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">template: <span class="string">`</span></span><br><span class="line"><span class="string">&lt;div&gt;</span></span><br><span class="line"><span class="string">  &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">  &lt;slot name="slot1"&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">  &lt;slot name="slot2"&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>以此可以间接实现 父组件向子组件传递信息的途径</p>
+</blockquote>
+<h5 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h5>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/Vue重头学/002 侦听器watch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/20/Vue重头学/002 侦听器watch/" itemprop="url">vue-watch</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T17:07:12+08:00">
+                2019-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue学习/" itemprop="url" rel="index">
+                    <span itemprop="name">vue学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/20/Vue重头学/002 侦听器watch/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/20/Vue重头学/002 侦听器watch/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="watch-属性监听：监听属性的变化"><a href="#watch-属性监听：监听属性的变化" class="headerlink" title="watch 属性监听：监听属性的变化"></a>watch 属性监听：监听属性的变化</h2><ul>
+<li>watch里面的方法名称是data中的属性名称</li>
+<li>每个方法中会接收两个参数 newValue,oldValue</li>
+<li>方法不需要调用</li>
+</ul>
+<blockquote>
+<p>注：</p>
+<ul>
+<li>深度监听： 当一个数据是一个引用数据类型时，需要进行深度监听，可以获取到一个新值，深度监听的时候必须设置属性</li>
+<li><code>deep:true</code></li>
+</ul>
+</blockquote>
+<h3 id="不推荐使用，常用于异步调用场景-ajax调用"><a href="#不推荐使用，常用于异步调用场景-ajax调用" class="headerlink" title="不推荐使用，常用于异步调用场景 ajax调用"></a>不推荐使用，常用于异步调用场景 ajax调用</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/Vue重头学/001 计算属性computed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/20/Vue重头学/001 计算属性computed/" itemprop="url">vue-computed 计算属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T15:56:28+08:00">
+                2019-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue学习/" itemprop="url" rel="index">
+                    <span itemprop="name">vue学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/20/Vue重头学/001 计算属性computed/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/20/Vue重头学/001 计算属性computed/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="计算属性-解决的问题"><a href="#计算属性-解决的问题" class="headerlink" title="计算属性 解决的问题"></a>计算属性 解决的问题</h4><ul>
+<li>避免 模版上出现复杂的业务逻辑</li>
+</ul>
+<h4 id="何谓计算属性"><a href="#何谓计算属性" class="headerlink" title="何谓计算属性"></a>何谓计算属性</h4><ul>
+<li>通过属性计算得来的属性，这个对象里存放的都是方法<blockquote>
+<p>注意事项：</p>
+<ul>
+<li><code>computed</code>是一个属性，而不是方法。[在写法上应注意 computed:{ code…对象 }]</li>
+<li>computed里面的方法在调用的时候不需要加括号();  [加了会提示 xxx不是一个function  ]</li>
+<li>只要data中的属性发生了变化，那么就会触发computed里面相对应的方法;</li>
+<li>computed具有缓存功能,若属性不改变则方法不会触发，而是从缓存中读取最终的结果;</li>
+<li>computed里面的方法必须return出一个返回值</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="计算属性-computed-与方法-methods-之间的区别"><a href="#计算属性-computed-与方法-methods-之间的区别" class="headerlink" title="计算属性 computed 与方法 methods 之间的区别"></a>计算属性 <code>computed</code> 与方法 <code>methods</code> 之间的区别</h4><ul>
+<li>computed执行不需要加括号，methods需要。在选择上，考虑类似需要通过点击事件执行的 使用methods方法，考虑数据转换后直接渲染使用计算属性（各种功能实现，最后显示），避免在模版上写过多的逻辑</li>
+<li>computed具有缓存功能,计算属性是基于它们的依赖进行缓存的。<strong>计算属性只有在它的相关依赖发生改变时才会重新求值.</strong></li>
+</ul>
+<p>####</p>
 
           
         
@@ -1683,384 +2094,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/箭头函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="午后の">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/27/箭头函数/" itemprop="url">箭头函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T00:43:00+08:00">
-                2019-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/27/箭头函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/27/箭头函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="箭头函数的语法"><a href="#箭头函数的语法" class="headerlink" title="箭头函数的语法"></a>箭头函数的语法</h3><p><img src="/2019/04/27/箭头函数/01.png" alt="图示"></p>
-<h3 id="各种箭头函数的es5写法"><a href="#各种箭头函数的es5写法" class="headerlink" title="各种箭头函数的es5写法"></a>各种箭头函数的es5写法</h3><p><a href="https://babeljs.io/repl" target="_blank" rel="noopener">https://babeljs.io/repl</a></p>
-<p><a href="https://babeljs.io/repl" target="_blank" rel="noopener">Babel网站</a> <a href="https://babeljs.io/repl" target="_blank" rel="noopener">https://babeljs.io/repl</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v;</span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">5</span>;<span class="comment">//不需要参数</span></span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span> num1 + num2; <span class="comment">//多个参数</span></span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//箭头函数返回一个对象；其后需加（）</span></span><br><span class="line"><span class="comment">// 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象时，必须在对象外面加一个括号()</span></span><br><span class="line"><span class="keyword">var</span> getRempItem = <span class="function"><span class="params">id</span> =&gt;</span>(&#123; <span class="attr">id</span>: id,<span class="attr">name</span>:<span class="string">"Temp"</span> &#125;);</span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="keyword">var</span> getRempItem = <span class="function"><span class="keyword">function</span> <span class="title">getRempItem</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    id: id,</span><br><span class="line">    name: <span class="string">"Temp"</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> full = <span class="function">(<span class="params">&#123; first,last &#125;</span>) =&gt;</span> first +<span class="string">''</span>+last;</span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="keyword">var</span> full = <span class="function"><span class="keyword">function</span> <span class="title">full</span>(<span class="params">_ref</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> first = _ref.first,</span><br><span class="line">      last = _ref.last;</span><br><span class="line">  <span class="keyword">return</span> first + <span class="string">''</span> + last;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//箭头函数 判断偶数工具</span></span><br><span class="line"><span class="keyword">const</span> isEven = <span class="function"><span class="params">n</span> =&gt;</span> n%<span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="keyword">var</span> isEven = <span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// rest参数与箭头函数结合的例子</span></span><br><span class="line">  <span class="comment">// 剩余参数语法允许我们将一个不定数量的参数表示为一个数组。</span></span><br><span class="line"><span class="keyword">const</span> numbers = <span class="function">(<span class="params">...nums</span>) =&gt;</span> nums;</span><br><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="function"><span class="keyword">function</span> <span class="title">numbers</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> _len = <span class="built_in">arguments</span>.length, nums = <span class="keyword">new</span> <span class="built_in">Array</span>(_len), _key = <span class="number">0</span>; _key &lt; _len; _key++) &#123;</span><br><span class="line">    nums[_key] = <span class="built_in">arguments</span>[_key];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> nums;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h6 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h6><ul>
-<li>调用箭头函数时，不会隐式传入this参数，而是从定义时的函数继承上下文。</li>
-<li>箭头函数的作用域不可以被重新绑定;</li>
-<li>不可以当作构造函数使用，也就是不能用new命令实例化一个对象，否则会抛出一个错误；</li>
-<li>不可以使用arguments对象，该对象在函数体内不存在，如果要用的话，可以用rest参数代替；</li>
-<li>不可以使用yield命令，箭头函数不能用作Generator函数；</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/25/继承的几种方式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="午后の">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/25/继承的几种方式/" itemprop="url">继承的几种方式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-25T23:03:19+08:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/25/继承的几种方式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/25/继承的几种方式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>JS实现继承的几种方式</p>
-<p>既然要实现继承，那么首先我们得有一个父类，代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个动物类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 属性</span></span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Animal'</span>;</span><br><span class="line">  <span class="comment">// 实例方法</span></span><br><span class="line">  <span class="keyword">this</span>.sleep = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在睡觉！'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 原型方法</span></span><br><span class="line">Animal.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params">food</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在吃：'</span> + food);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>1、原型链继承</p>
-<p>核心： 将父类的实例作为子类的原型<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.name = <span class="string">'cat'</span>;</span><br><span class="line"><span class="comment">//　Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.eat(<span class="string">'fish'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>特点：</p>
-<pre><code>1. 非常纯粹的继承关系，实例是子类的实例，也是父类的实例
-2. 父类新增原型方法/原型属性，子类都能访问到
-3. 简单，易于实现
-</code></pre></blockquote>
-<blockquote>
-<p>缺点：</p>
-<pre><code>1. 要想为子类新增属性和方法，必须要在new Animal()这样的语句之后执行，不能放到构造器中
-2. 无法实现多继承
-3. 来自原型对象的所有属性被所有实例共享（来自原型对象的引用属性是所有实例共享的）（详细请看附录代码： 示例1）
-4. 创建子类实例时，无法向父类构造函数传参
-</code></pre></blockquote>
-<p>推荐指数：★★（3、4两大致命缺陷）</p>
-<p>2、构造继承</p>
-<p>核心：使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>特点：</p>
-<pre><code>1. 解决了1中，子类实例共享父类引用属性的问题
-2. 创建子类实例时，可以向父类传递参数
-3. 可以实现多继承（call多个父类对象）
-</code></pre></blockquote>
-<blockquote>
-<p>缺点：</p>
-<pre><code>1. 实例并不是父类的实例，只是子类的实例
-2. 只能继承父类的实例属性和方法，不能继承原型属性/方法
-3. 无法实现函数复用，每个子类都有父类实例函数的副本，影响性能
-</code></pre></blockquote>
-<p>推荐指数：★★（缺点3）</p>
-<p>3、实例继承</p>
-<p>核心：为父类实例添加新特性，作为子类实例返回<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> instance = <span class="keyword">new</span> Animal();</span><br><span class="line">  instance.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">  <span class="keyword">return</span> instance;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>特点：</p>
-<pre><code>1. 不限制调用方式，不管是new 子类()还是子类(),返回的对象具有相同的效果
-</code></pre><p>缺点：</p>
-<pre><code>1. 实例是父类的实例，不是子类的实例
-2. 不支持多继承
-</code></pre><p>推荐指数：★★</p>
-<p>4、拷贝继承<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> animal = <span class="keyword">new</span> Animal();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> p <span class="keyword">in</span> animal)&#123;</span><br><span class="line">    Cat.prototype[p] = animal[p];</span><br><span class="line">  &#125;</span><br><span class="line">  Cat.prototype.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<p>特点：</p>
-<pre><code>1. 支持多继承
-</code></pre><p>缺点：</p>
-<pre><code>1. 效率较低，内存占用高（因为要拷贝父类的属性）
-2. 无法获取父类不可枚举的方法（不可枚举方法，不能使用for in 访问到）
-</code></pre><p>推荐指数：★（缺点1）</p>
-<p>5、组合继承</p>
-<p>核心：通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<p>特点：</p>
-<pre><code>1. 弥补了方式2的缺陷，可以继承实例属性/方法，也可以继承原型属性/方法
-2. 既是子类的实例，也是父类的实例
-3. 不存在引用属性共享问题
-4. 可传参
-5. 函数可复用
-</code></pre><p>缺点：</p>
-<pre><code>1. 调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）
-</code></pre><p>推荐指数：★★★★（仅仅多消耗了一点内存）</p>
-<p>6、寄生组合继承</p>
-<p>核心：通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 创建一个没有实例方法的类</span></span><br><span class="line">  <span class="keyword">var</span> Super = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">  Super.prototype = Animal.prototype;</span><br><span class="line">  <span class="comment">//将实例作为子类的原型</span></span><br><span class="line">  Cat.prototype = <span class="keyword">new</span> Super();</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line">Cat.prototype.constructor = Cat; <span class="comment">// 需要修复下构造函数</span></span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<p>特点：</p>
-<pre><code>1. 堪称完美
-</code></pre><p>缺点：</p>
-<pre><code>1. 实现较为复杂
-</code></pre><p>推荐指数：★★★★（实现复杂，扣掉一颗星）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2111,7 +2144,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2122,7 +2155,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2133,7 +2166,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
