@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="react-Router,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="核心 react-router react-router-dom   √ react-router-dom核心用法 react-router是一个基础包，react-router-dom中包含了react-router      安装1yarn add react-router-dom react-router-dom核心用法 HashRouter、BrowserRouter Route：path">
+<meta name="keywords" content="react-Router">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React_Router4.0 基础">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/React/React-Router4-0/index.html">
+<meta property="og:site_name" content="午后の">
+<meta property="og:description" content="核心 react-router react-router-dom   √ react-router-dom核心用法 react-router是一个基础包，react-router-dom中包含了react-router      安装1yarn add react-router-dom react-router-dom核心用法 HashRouter、BrowserRouter Route：path">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/Route_useful.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/Link.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/Switch01.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/exact01.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/ParamsExample.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/ShowParamsExample.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/Route_base.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/Route_base_show.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/Route_pz01.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/Route_pz02.png">
+<meta property="og:updated_time" content="2019-07-07T10:36:02.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React_Router4.0 基础">
+<meta name="twitter:description" content="核心 react-router react-router-dom   √ react-router-dom核心用法 react-router是一个基础包，react-router-dom中包含了react-router      安装1yarn add react-router-dom react-router-dom核心用法 HashRouter、BrowserRouter Route：path">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/21/React/React-Router4-0/Route_useful.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/21/React/React-Router4-0/">
+
+
+
+
+
+  <title>React_Router4.0 基础 | 午后の</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">午后の</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-档案">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            档案
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-匿名聊天">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            匿名聊天
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/React/React-Router4-0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React_Router4.0 基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T18:41:23+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/21/React/React-Router4-0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/React/React-Router4-0/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h3><ul>
+<li>react-router</li>
+<li>react-router-dom   √<ul>
+<li>react-router-dom核心用法<blockquote>
+<p>react-router是一个基础包，react-router-dom中包含了react-router</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add react-router-dom</span><br></pre></td></tr></table></figure>
+<h5 id="react-router-dom核心用法"><a href="#react-router-dom核心用法" class="headerlink" title="react-router-dom核心用法"></a>react-router-dom核心用法</h5><ul>
+<li>HashRouter、BrowserRouter</li>
+<li>Route：path、exact、component、render</li>
+<li>NavLink、Link</li>
+<li>Switch</li>
+<li>Redirect</li>
+</ul>
+<h6 id="HashRouter与BrowserRouter的区别"><a href="#HashRouter与BrowserRouter的区别" class="headerlink" title="HashRouter与BrowserRouter的区别"></a><code>HashRouter</code>与<code>BrowserRouter</code>的区别</h6><ul>
+<li>hash路由 url中带有 <strong>#</strong> .</li>
+</ul>
+<h6 id="Route的用法"><a href="#Route的用法" class="headerlink" title="Route的用法"></a><code>Route</code>的用法</h6><p><img src="/2019/04/21/React/React-Router4-0/Route_useful.png" alt="Route用法"></p>
+<h6 id="Link-导航功能"><a href="#Link-导航功能" class="headerlink" title="Link  导航功能"></a><code>Link</code>  导航功能</h6><p><img src="/2019/04/21/React/React-Router4-0/Link.png" alt="Link的用法"></p>
+<blockquote>
+<p><code>NavLink</code> 主要用于菜单导航</p>
+<ul>
+<li><strong>动态取值：</strong><ul>
+<li><strong>❤❤❤</strong> 定义<code>&lt;Route path=&quot;/chaos/:number&quot;/&gt;</code> 取值：<code>this.props.match.params.number</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h6 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a><code>Switch</code></h6><p><img src="/2019/04/21/React/React-Router4-0/Switch01.png" alt="Switch用法"></p>
+<blockquote>
+<p>因为4.0的路由允许我们匹配多个路由，例如当访问 /admin/ui时，会匹配如图符合条件的所有路由，实际上我们只需要匹配一个，此时在外嵌套Switch</p>
+</blockquote>
+<h6 id="Redirect-重定向-exact-严格匹配"><a href="#Redirect-重定向-exact-严格匹配" class="headerlink" title="Redirect  重定向   exact 严格匹配"></a><code>Redirect</code>  重定向   <code>exact</code> 严格匹配</h6><blockquote>
+<p>采用 <code>&lt;Switch&gt;</code>，只有一个路由会被渲染，并且总是渲染第一个匹配到的组件。因此，在第一个路由中，还是需要使用 <code>exact</code>，否则，当我们渲染 ‘/users’ 或 ‘/users/add’ 时，只会显示匹配 ‘/‘ 的组件<br><img src="/2019/04/21/React/React-Router4-0/exact01.png" alt="exact &amp; redirect"></p>
+</blockquote>
+<h6 id="Switch与exact的区别？"><a href="#Switch与exact的区别？" class="headerlink" title="Switch与exact的区别？"></a>Switch与exact的区别？</h6><ul>
+<li>switch 匹配首个符合条件的路由，exact用于精确匹配</li>
+</ul>
+<h6 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h6><p><img src="/2019/04/21/React/React-Router4-0/ParamsExample.png" alt="ParamsExample"><br><img src="/2019/04/21/React/React-Router4-0/ShowParamsExample.png" alt="ParamsExample"></p>
+<ul>
+<li>router4.0基本路由实现</li>
+</ul>
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (&lt;div&gt;this is main page.&lt;/div&gt;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/04/21/React/React-Router4-0/Route_base.png" alt="ParamsExample"></p>
+<p><img src="/2019/04/21/React/React-Router4-0/Route_base_show.png" alt="ParamsExample"></p>
+<ul>
+<li>router4.0  借助 <strong><code>this.props.children</code></strong> 实现集中化配置</li>
+</ul>
+<hr>
+<p><img src="/2019/04/21/React/React-Router4-0/Route_pz01.png" alt="ParamsExample"></p>
+<p><img src="/2019/04/21/React/React-Router4-0/Route_pz02.png" alt="ParamsExample"></p>
+<blockquote>
+<p><strong><code>this.props.children</code></strong></p>
+<ul>
+<li><code>this.props</code> 对象的属性与组件的属性一一对应，但是有一个例外，就是 <code>this.props.children</code> 属性。它表示组件的所有子节点</li>
+<li>〇 ♡〇 <code>this.props.children</code> 的值有三种可能：如果当前组件没有子节点，它就是 <code>undefined</code> ;如果有一个子节点，数据类型是 <code>objec</code>t ；如果有多个子节点，数据类型就是 <code>array</code> 。所以，处理 <code>this.props.children</code> 的时候要小心。 React 提供一个工具方法 <code>React.Children</code> 来处理 <code>this.props.children</code> 。我们可以用 <code>React.Children.map</code> 来遍历子节点，而不用担心 <code>this.props.children</code> 的数据类型是 <code>undefined</code> 还是 <code>object</code>。</li>
+</ul>
+</blockquote>
+<ul>
+<li>嵌套路由<blockquote>
+<p>访问 <strong>/</strong> 时 返回的是<code>Main</code>组件 因此在Main中再添加一层路由 <code>this.props.children</code> ,在router文件原来的{Main}处做修改为 <code>render={ ()=&gt;{ &lt;需要渲染的组件&gt;&lt;/需要渲染的组件&gt; }}</code> ,此时可以在 需要渲染的组件内再嵌套一个路由。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>使用嵌套路由时，最好用render返回一个主页面，在主页面中再实现嵌套路由的跳转</p>
+</blockquote>
+<ul>
+<li>注意事项：<blockquote>
+<p>父节点勿用exact精准匹配，会导致子路由失效</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**@Home .js */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;Link&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;ul&gt;</span><br><span class="line">                        &lt;li&gt;&lt;Link to="/main"&gt;Home&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;Link to="/about"&gt;About&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;Link to="/topics"&gt;Topics&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;hr /</span>&gt;</span><br><span class="line">                    &#123;<span class="keyword">this</span>.props.children&#125;</span><br><span class="line">                &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**@router .js */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;HashRouter <span class="keyword">as</span> Router,Route &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> Main <span class="keyword">from</span> <span class="string">'./Main'</span>;</span><br><span class="line"><span class="keyword">import</span> About <span class="keyword">from</span> <span class="string">'./about'</span>;</span><br><span class="line"><span class="keyword">import</span> Topic <span class="keyword">from</span> <span class="string">'./topic'</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./Home'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">IRoute</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;Router&gt;</span><br><span class="line">                &lt;Home&gt;</span><br><span class="line">                    &lt;Route path=<span class="string">"/main"</span> render=&#123;()=&gt;</span><br><span class="line">                         &lt;Main&gt;</span><br><span class="line">                             &lt;div&gt;</span><br><span class="line">                                &lt;Route path=<span class="string">"/main/a"</span> component=&#123;About&#125;&gt;&lt;/Route&gt;</span><br><span class="line">                             &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">                         &lt;/</span>Main&gt;</span><br><span class="line">                         &#125;&gt;&lt;/Route&gt;</span><br><span class="line">                    &lt;Route path=<span class="string">"/about"</span> component=&#123;About&#125;&gt;&lt;/Route&gt;</span><br><span class="line">                    &lt;Route path=<span class="string">"/topics"</span> component=&#123;Topic&#125;&gt;&lt;/Route&gt;</span><br><span class="line">                &lt;<span class="regexp">/Home&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>Router&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**@Main .js */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; Link &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            <span class="keyword">this</span> is main page.</span><br><span class="line">            &lt;Link to=<span class="string">"/main/a"</span>&gt;嵌套路由&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">            &lt;hr/</span>&gt;</span><br><span class="line">            &#123;<span class="keyword">this</span>.props.children&#125;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h5 id="获取路由的参数id"><a href="#获取路由的参数id" class="headerlink" title="获取路由的参数id"></a>获取路由的参数id</h5><ul>
+<li>设置为动态路由 ，用冒号 <code>：</code> 定义一个id值</li>
+<li>获取路由参数值，固定语法 <code>this.props.match.params.定义の动态变量</code></li>
+<li><code>&lt;Route component={NoMatch}&gt;&lt;/Route&gt;</code> 设定404页面，不指定path即可。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**@router .js */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;HashRouter <span class="keyword">as</span> Router,Route,Switch &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> Main <span class="keyword">from</span> <span class="string">'./Main'</span>;</span><br><span class="line"><span class="keyword">import</span> Info <span class="keyword">from</span> <span class="string">'./info'</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./Home'</span>;</span><br><span class="line"><span class="keyword">import</span> NoMatch <span class="keyword">from</span> <span class="string">'./NoMatch'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">IRoute</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;Router&gt;</span><br><span class="line">                &lt;Home&gt;</span><br><span class="line">                    &lt;Switch&gt;</span><br><span class="line">                    &lt;Route path=<span class="string">"/main"</span> render=&#123;()=&gt;</span><br><span class="line">                         &lt;Main&gt;</span><br><span class="line">                             &lt;div&gt;</span><br><span class="line">                                &lt;Route path=<span class="string">"/main/:value"</span> component=&#123;Info&#125;&gt;&lt;/Route&gt;</span><br><span class="line">                             &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">                         &lt;/</span>Main&gt;</span><br><span class="line">                         &#125;&gt;&lt;/Route&gt;</span><br><span class="line">                    &lt;Route component=&#123;NoMatch&#125;&gt;&lt;/Route&gt;</span><br><span class="line">                    &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>Home&gt;</span><br><span class="line">            &lt;<span class="regexp">/Router&gt;</span></span><br><span class="line"><span class="regexp">        );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**@Home .js */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;Link&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;ul&gt;</span><br><span class="line">                        &lt;li&gt;&lt;Link to="/main"&gt;Home&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;Link to="/about"&gt;About&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;hr /</span>&gt;</span><br><span class="line">                    &#123;<span class="keyword">this</span>.props.children&#125;</span><br><span class="line">                &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**@Main .js */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; Link &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            <span class="keyword">this</span> is main page.</span><br><span class="line">            &lt;br/&gt;</span><br><span class="line">            &lt;Link to=<span class="string">"/main/test-id"</span>&gt;嵌套路由<span class="number">1</span>&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">            &lt;br/</span>&gt;</span><br><span class="line">            &lt;Link to=<span class="string">"/main/456"</span>&gt;嵌套路由<span class="number">2</span>&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">            &lt;hr/</span>&gt;</span><br><span class="line">            &#123;<span class="keyword">this</span>.props.children&#125;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**@info .js */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Info</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                这里是测试动态路由功能。</span><br><span class="line">                动态路由的值是: &#123;<span class="keyword">this</span>.props.match.params.value&#125;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h5 id="项目中实现路由功能"><a href="#项目中实现路由功能" class="headerlink" title="项目中实现路由功能"></a>项目中实现路由功能</h5><ul>
+<li>入口文件index.js 配置router，指引页面的跳转方向</li>
+<li>在router文件中，定义使用路由的方式、加载根组件（如 App.js `return (<pre><code>&lt;div&gt;
+  {this.props.children}
+&lt;/div&gt;
+</code></pre>  );`）</li>
+<li>App.js主要用于存放子组件</li>
+<li>实现路由的层层嵌套</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-Router/" rel="tag"># react-Router</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/14/React/react写法归纳/" rel="next" title="react写法归纳">
+                <i class="fa fa-chevron-left"></i> react写法归纳
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/23/antd/antd-ui组件/" rel="prev" title="Antd UI组件">
+                Antd UI组件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cg</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#核心"><span class="nav-number">1.</span> <span class="nav-text">核心</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#react-router-dom核心用法"><span class="nav-number">1.0.2.</span> <span class="nav-text">react-router-dom核心用法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#HashRouter与BrowserRouter的区别"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">HashRouter与BrowserRouter的区别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Route的用法"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Route的用法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Link-导航功能"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">Link  导航功能</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Switch"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">Switch</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Redirect-重定向-exact-严格匹配"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">Redirect  重定向   exact 严格匹配</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Switch与exact的区别？"><span class="nav-number">1.0.2.6.</span> <span class="nav-text">Switch与exact的区别？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例"><span class="nav-number">1.0.2.7.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取路由的参数id"><span class="nav-number">1.0.3.</span> <span class="nav-text">获取路由的参数id</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#项目中实现路由功能"><span class="nav-number">1.0.4.</span> <span class="nav-text">项目中实现路由功能</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cg</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'YzvA2eWvWbzyxin2Gx5TsFha-gzGzoHsz',
+        appKey: 'o6tqeDfg9ukvRHO9ey1PGIJd',
+        placeholder: '不为无益之事,何以遣有涯之生',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

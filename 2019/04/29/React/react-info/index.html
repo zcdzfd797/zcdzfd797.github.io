@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="react基础,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="jsx语法的优点 jsx执行更快，因为它在编译为javascript代码后进行了优化 它是类型安全的，在编译过程中就能发现错误 使用jsx编写模板更加简单快速  react 中如何创建一个组件  1234// ES6class 组件名 extends Component&amp;#123;&amp;#125;// ES5var App=React.createClass(&amp;#123;&amp;#125;) render">
+<meta name="keywords" content="react基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react_info">
+<meta property="og:url" content="http://yoursite.com/2019/04/29/React/react-info/index.html">
+<meta property="og:site_name" content="午后の">
+<meta property="og:description" content="jsx语法的优点 jsx执行更快，因为它在编译为javascript代码后进行了优化 它是类型安全的，在编译过程中就能发现错误 使用jsx编写模板更加简单快速  react 中如何创建一个组件  1234// ES6class 组件名 extends Component&amp;#123;&amp;#125;// ES5var App=React.createClass(&amp;#123;&amp;#125;) render">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-07T10:27:26.764Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react_info">
+<meta name="twitter:description" content="jsx语法的优点 jsx执行更快，因为它在编译为javascript代码后进行了优化 它是类型安全的，在编译过程中就能发现错误 使用jsx编写模板更加简单快速  react 中如何创建一个组件  1234// ES6class 组件名 extends Component&amp;#123;&amp;#125;// ES5var App=React.createClass(&amp;#123;&amp;#125;) render">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/29/React/react-info/">
+
+
+
+
+
+  <title>react_info | 午后の</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">午后の</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-档案">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            档案
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-匿名聊天">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            匿名聊天
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/React/react-info/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="午后の">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react_info</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-29T12:51:19+08:00">
+                2019-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/29/React/react-info/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/29/React/react-info/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h4 id="jsx语法的优点"><a href="#jsx语法的优点" class="headerlink" title="jsx语法的优点"></a>jsx语法的优点</h4><ol>
+<li>jsx执行更快，因为它在编译为javascript代码后进行了优化</li>
+<li>它是类型安全的，在编译过程中就能发现错误</li>
+<li>使用jsx编写模板更加简单快速</li>
+</ol>
+<h4 id="react-中如何创建一个组件"><a href="#react-中如何创建一个组件" class="headerlink" title="react 中如何创建一个组件"></a>react 中如何创建一个组件</h4>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 组件名 <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;&#125;</span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">var</span> App=React.createClass(&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="render函数什么时候会执行？"><a href="#render函数什么时候会执行？" class="headerlink" title="render函数什么时候会执行？"></a>render函数什么时候会执行？</h4><pre><code>当`this.state` 或`this.props` 发生改变的时候`render`函数就会执行，手动调用`forceUpdate()`也会执行。
+</code></pre><h4 id="react如何进行数据的修改？"><a href="#react如何进行数据的修改？" class="headerlink" title="react如何进行数据的修改？"></a>react如何进行数据的修改？</h4><pre><code>修改数据通过`this.setState(obj,callback)`
+* `this.setState`是一个异步函数。
+* 参数1 是需要修改的数据（一个对象）
+* 参数2 是一个回调函数，用以验证数据是否修改成功
+</code></pre><h4 id="react中如何定义自定义属性，以及限制外部数据类型"><a href="#react中如何定义自定义属性，以及限制外部数据类型" class="headerlink" title="react中如何定义自定义属性，以及限制外部数据类型"></a>react中如何定义自定义属性，以及限制外部数据类型</h4><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、自定义属性</span></span><br><span class="line">  组件名称.defaultProps= &#123;</span><br><span class="line">      key:val</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//2、限制外部数据的类型</span></span><br><span class="line">  <span class="comment">//a、引入propTypes第三方模块</span></span><br><span class="line">  <span class="comment">//b、类型限制</span></span><br><span class="line">  组件名称.propTypes = &#123;</span><br><span class="line">  key:propTypes.类型</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="react路由常见的一些组件配置有哪些？"><a href="#react路由常见的一些组件配置有哪些？" class="headerlink" title="react路由常见的一些组件配置有哪些？"></a>react路由常见的一些组件配置有哪些？</h4><p><code>BrowserRouter</code><br><code>HashRouter</code><br><code>Route</code><br><code>Link</code><br><code>NavLink</code><br><code>Switch</code><br><code>Redirect</code></p>
+<ul>
+<li><code>BrowserRouter</code> 和 <code>HashRouter</code>是路由的根组件，根组件下面只能有一个子元素；</li>
+<li><code>Route</code>是路由路径所对应的组件，<code>Link</code> 和<code>NavLink</code>是进行路由的跳转。区别是当选中标签的时候NavLink会加上一个<br>class</li>
+<li><code>Swicth</code>:被Switch包裹的Route渲染的时候只会渲染一个路径，注意：子页面不要放在Switch里面，主<br>页面放在Switch里面</li>
+<li><code>Redirect</code>：设置路由的重定向</li>
+</ul>
+<h4 id="react路由中Route渲染组件的方法有哪几种？区别是什么？"><a href="#react路由中Route渲染组件的方法有哪几种？区别是什么？" class="headerlink" title="react路由中Route渲染组件的方法有哪几种？区别是什么？"></a>react路由中Route渲染组件的方法有哪几种？区别是什么？</h4><p>渲染方式有2种</p>
+<p>1.通过component进行组件的渲染，这种方式的优点在于可以直接在组件的内部接受到<code>histroy</code>、<code>location</code>、<code>match</code>,缺点在于如果需要组件传参，或者渲染jsx语法的时候无法使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">"/home"</span> component=&#123;组件名称&#125;&gt;&lt;/Route&gt;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>通过render进行渲染组件，优点在于可以进行组件传参，还可以渲染非组件的标签，缺点在于如果需要使用 <code>histroy</code>、 <code>location</code>、 <code>match</code> 的话需要在函数中传递过去。  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">"/home"</span> render=&#123;()=&gt;&#123;</span><br><span class="line"><span class="keyword">return</span> &lt;Home/&gt;</span><br><span class="line">&#125;&#125;&gt;&lt;/Route&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="如何控制路由的路径完全匹配"><a href="#如何控制路由的路径完全匹配" class="headerlink" title="如何控制路由的路径完全匹配"></a>如何控制路由的路径完全匹配</h4><p>给<code>NavLink</code> 或 <code>Route</code> 设置 <code>exact</code> 属性</p>
+<h4 id="react中路由传递参数的方法有哪些？"><a href="#react中路由传递参数的方法有哪些？" class="headerlink" title="react中路由传递参数的方法有哪些？"></a><code>react</code>中路由传递参数的方法有哪些？</h4><p>方案一： 通过<code>params</code>进行传值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router path=<span class="string">"/one/:id"</span> render=&#123;(history)=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;One history=&#123;history&#125;/&gt;</span><br><span class="line">&#125;&#125;&gt;</span><br><span class="line">// html跳转：</span><br><span class="line">&lt;NavLikn to=&#123;"/one/"+1&#125;&gt;one&lt;NavLink&gt;</span><br><span class="line">// js跳转：</span><br><span class="line">this.props.history.push( '/one/'+'1' )</span><br><span class="line">// 接收值：</span><br><span class="line">// 在组件内部通过constructor参数进行接受</span><br><span class="line">constructor(&#123;history,location,match&#125;)&#123;</span><br><span class="line">super();</span><br><span class="line">// 进行接受</span><br><span class="line">console.log(match.params)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方案二： 通过<code>query</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router path=<span class="string">"/one"</span> render=&#123;(history)=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;One history=&#123;history&#125;/&gt;</span><br><span class="line">&#125;&#125;&gt;</span><br><span class="line">// html跳转：</span><br><span class="line">&lt;NavLikn to=&#123;&#123;</span><br><span class="line">  pathname:"/one",</span><br><span class="line">  query:&#123;data:1&#125;</span><br><span class="line">&#125;&#125;&gt;one&lt;NavLink&gt;</span><br><span class="line">// js跳转：</span><br><span class="line">this.props.history.push(&#123; pathname : '/one' ,query : &#123; data: 1&#125; &#125;)</span><br><span class="line">// 获取值</span><br><span class="line">this.props.location.query.data</span><br></pre></td></tr></table></figure></p>
+<p>方案三： 通过<code>state</code><br>同query差不多，只是属性不一样，而且state传的参数是加密的，query传的参数是公开的，在<br>地址栏<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// html跳转方式</span></span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">pathname</span> : <span class="string">' /user'</span> , <span class="attr">state</span> : &#123; <span class="attr">day</span>: <span class="string">'Friday'</span> &#125;&#125;&#125;&gt;</span><br><span class="line"><span class="comment">// 2、js跳转方式</span></span><br><span class="line"><span class="keyword">this</span>.props.history.push(&#123; <span class="attr">pathname</span>:<span class="string">'/user'</span>,<span class="attr">state</span>:&#123;<span class="attr">day</span> : <span class="string">'Friday'</span> &#125; &#125;)</span><br><span class="line"><span class="comment">// 3、获取值</span></span><br><span class="line"><span class="keyword">this</span>.props.location.state.day</span><br><span class="line"><span class="comment">// 注意：如果通过render进行渲染的时候需要在回调中将history的值传递过去.如果是component进行</span></span><br><span class="line"><span class="comment">// 渲染的话，我们只需要通过this.props进行接受即可。</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="react中编程式导航方法有哪些？"><a href="#react中编程式导航方法有哪些？" class="headerlink" title="react中编程式导航方法有哪些？"></a>react中编程式导航方法有哪些？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.props.history.push(<span class="string">"需要跳转的路径"</span>)；<span class="comment">//跳转路径</span></span><br><span class="line"><span class="keyword">this</span>.props.history.back();               <span class="comment">//返回</span></span><br><span class="line"><span class="keyword">this</span>.props.history.forward();            <span class="comment">//前进</span></span><br><span class="line"><span class="keyword">this</span>.props.history.replace();           <span class="comment">//替换</span></span><br></pre></td></tr></table></figure>
+<h4 id="react中的生命周期有哪些？"><a href="#react中的生命周期有哪些？" class="headerlink" title="react中的生命周期有哪些？"></a>react中的生命周期有哪些？</h4><p>(1)、组件创建的过程<br>constructor<br>componentWillMount<br>render<br>componentDidMount<br>(2)数据更新值执行的生命周期函数<br>componentWillReceiveProps<br>shouldComponentUpdate<br>componentWillUpdate<br>render<br>componentDidUpdate<br>(3)组件销毁的时候<br>componentWillUnmount</p>
+<h4 id="谈谈你对react生命周期中shouldComponentUpdate的理解"><a href="#谈谈你对react生命周期中shouldComponentUpdate的理解" class="headerlink" title="谈谈你对react生命周期中shouldComponentUpdate的理解"></a>谈谈你对react生命周期中shouldComponentUpdate的理解</h4><p>react性能优化非常重要的一环。组件接受新的state或者props时调用，我们可以设置在此对比前后两<br>个props和state是否相同，如果相同则返回false阻止更新，因为相同的属性状态一定会生成相同的<br>dom树，这样就不需要创造新的dom树和旧的dom树进行diff算法对比，节省大量性能，尤其是在<br>dom结构复杂的时候</p>
+<h4 id="谈谈你对虚拟DOM的理解，以及好处？"><a href="#谈谈你对虚拟DOM的理解，以及好处？" class="headerlink" title="谈谈你对虚拟DOM的理解，以及好处？"></a>谈谈你对虚拟DOM的理解，以及好处？</h4><p>虚拟DOM：虚拟DOM其实就是js对象<br>虚拟DOM提高了react的性能，每次数据更新后都会重新计算上虚拟DOM，并和上一次的虚拟DOM<br>进行对比，对方法变化的部分进行批量更新。react中也提供了<code>shouldComponentUpdate</code>生命周期<br>的回调，来减少数据变化后不必要的虚拟DOM对比过程。保证性能。</p>
+<h4 id="谈谈你对flux的理解"><a href="#谈谈你对flux的理解" class="headerlink" title="谈谈你对flux的理解"></a>谈谈你对flux的理解</h4><p>利用单项数据流的方式来组合react的视图组件，它是一种模式，而不是一种框架简单来说flux可以帮我们解决非父子组件之间传值</p>
+<h4 id="组件传值的几种方式"><a href="#组件传值的几种方式" class="headerlink" title="组件传值的几种方式"></a>组件传值的几种方式</h4><p>父传子：父组件通过props传递给子组件。<br>子传父：父组件通过props向子组件传入一个方法，子组件通过调用该方法，将数据以参数形式传递给父组件<br>兄弟组件传值：</p>
+<ul>
+<li>子组件先传给父组件，父组件再传给那个子组件<pre><code>* 状态提升
+</code></pre><ul>
+<li>观察者模式</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react基础/" rel="tag"># react基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/28/JS基础/多维转一维数组/" rel="next" title="多维转一维数组/嵌套数组扁平化处理">
+                <i class="fa fa-chevron-left"></i> 多维转一维数组/嵌套数组扁平化处理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/04/工具/Git/" rel="prev" title="git">
+                git <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cg</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#jsx语法的优点"><span class="nav-number">1.</span> <span class="nav-text">jsx语法的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-中如何创建一个组件"><span class="nav-number">2.</span> <span class="nav-text">react 中如何创建一个组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#render函数什么时候会执行？"><span class="nav-number">3.</span> <span class="nav-text">render函数什么时候会执行？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react如何进行数据的修改？"><span class="nav-number">4.</span> <span class="nav-text">react如何进行数据的修改？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react中如何定义自定义属性，以及限制外部数据类型"><span class="nav-number">5.</span> <span class="nav-text">react中如何定义自定义属性，以及限制外部数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react路由常见的一些组件配置有哪些？"><span class="nav-number">6.</span> <span class="nav-text">react路由常见的一些组件配置有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react路由中Route渲染组件的方法有哪几种？区别是什么？"><span class="nav-number">7.</span> <span class="nav-text">react路由中Route渲染组件的方法有哪几种？区别是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何控制路由的路径完全匹配"><span class="nav-number">8.</span> <span class="nav-text">如何控制路由的路径完全匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react中路由传递参数的方法有哪些？"><span class="nav-number">9.</span> <span class="nav-text">react中路由传递参数的方法有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react中编程式导航方法有哪些？"><span class="nav-number">10.</span> <span class="nav-text">react中编程式导航方法有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react中的生命周期有哪些？"><span class="nav-number">11.</span> <span class="nav-text">react中的生命周期有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈你对react生命周期中shouldComponentUpdate的理解"><span class="nav-number">12.</span> <span class="nav-text">谈谈你对react生命周期中shouldComponentUpdate的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈你对虚拟DOM的理解，以及好处？"><span class="nav-number">13.</span> <span class="nav-text">谈谈你对虚拟DOM的理解，以及好处？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈你对flux的理解"><span class="nav-number">14.</span> <span class="nav-text">谈谈你对flux的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件传值的几种方式"><span class="nav-number">15.</span> <span class="nav-text">组件传值的几种方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cg</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'YzvA2eWvWbzyxin2Gx5TsFha-gzGzoHsz',
+        appKey: 'o6tqeDfg9ukvRHO9ey1PGIJd',
+        placeholder: '不为无益之事,何以遣有涯之生',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
